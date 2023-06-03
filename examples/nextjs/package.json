@@ -1,6 +1,6 @@
 {
   "name": "nextjs",
-  "version": "0.1.0",
+  "version": "0.1.1",
   "private": true,
   "scripts": {
     "dev": "next dev",
@@ -22,10 +22,10 @@
     "react-dom": "18.2.0",
     "tailwindcss": "3.3.2",
     "typescript": "5.1.3",
-    "@scrshot/react": "0.0.1"
+    "@scrshot/react": "0.0.2"
   },
   "devDependencies": {
-    "@scrshot/cli": "0.0.1",
-    "@scrshot/bundler": "0.0.1"
+    "@scrshot/cli": "0.0.2",
+    "@scrshot/bundler": "0.0.2"
   }
 }

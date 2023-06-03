@@ -1,7 +1,7 @@
 {
   "name": "vite-react",
   "private": true,
-  "version": "0.0.0",
+  "version": "0.0.1",
   "type": "module",
   "scripts": {
     "dev": "vite",
@@ -13,7 +13,7 @@
   "dependencies": {
     "react": "^18.2.0",
     "react-dom": "^18.2.0",
-    "@scrshot/react": "0.0.1"
+    "@scrshot/react": "0.0.2"
   },
   "devDependencies": {
     "@types/react": "^18.0.37",
@@ -26,7 +26,7 @@
     "eslint-plugin-react-refresh": "^0.3.4",
     "typescript": "^5.0.2",
     "vite": "^4.3.9",
-    "@scrshot/cli": "0.0.1",
-    "@scrshot/bundler": "0.0.1"
+    "@scrshot/cli": "0.0.2",
+    "@scrshot/bundler": "0.0.2"
   }
 }
