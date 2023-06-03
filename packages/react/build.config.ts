@@ -1,8 +1,9 @@
 export default {
   entries: [
-    './index'
+    './index',
   ],
   declaration: false,
+  failOnWarn: false,
   rollup: {
     emitCJS: true,
   },

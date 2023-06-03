@@ -1,0 +1,30 @@
+{
+  "url": "http://localhost:3000",
+  "dest": "public/images/screenshots",
+  "auth": {
+    "path": "/login",
+    "success": {
+      "path": "/dashboard"
+    }
+  },
+  "screenshots": {
+    "homepage": {
+      "auth": false,
+      "path": "/"
+    },
+    "login-form": {
+      "auth": false,
+      "path": "/login"
+    },
+    "posts-list": {
+      "path": "/dashboard"
+    },
+    "posts-create": {
+      "path": "/editor/clig2d23u0003r5b6voj6hivw",
+      "wait": "2s"
+    },
+    "settings": {
+      "path": "/dashboard/settings"
+    }
+  }
+}

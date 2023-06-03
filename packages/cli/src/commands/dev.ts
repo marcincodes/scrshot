@@ -2,8 +2,12 @@ import path from 'node:path';
 import fs from 'node:fs';
 import { Browser, BrowserContextOptions, Page, chromium } from 'playwright';
 import sharp from 'sharp';
+import ora from 'ora';
+import ms from 'ms';
 
 import { Config, getConfig } from '@scrshot/helpers'
+
+const sleep = (ms: number) => new Promise((resolve) => setTimeout(resolve, ms));
 
 async function getWatermark() {
   return sharp({
@@ -37,6 +41,8 @@ async function createContext(browser: Browser, config: Config, contextConfig: Pa
 const BASEDIR = '.scrshot';
 
 async function createAuthContext(browser: Browser, config: Config) {
+  const authSpinner = ora('Waiting for authorization').start();
+
   const filename = 'auth.json';
   const needAuth = !fs.existsSync(path.resolve(BASEDIR, filename));
 
@@ -57,10 +63,14 @@ async function createAuthContext(browser: Browser, config: Config) {
 
       authBrowser.close();
 
+      authSpinner.succeed('Authorized');
+
       return createContext(browser, config, {
         storageState: path.resolve(BASEDIR, filename)
       })
   }
+
+  authSpinner.succeed('Authorized');
 
   return createContext(browser, config, {
     storageState: path.resolve(BASEDIR, filename)
@@ -94,26 +104,80 @@ async function takeScreenshot(page: Page, screenshot: { name: string, dest: Conf
 }
 
 export async function run() {
+  const configSpinner = ora('Loading config').start();
+
   if (!fs.existsSync(path.resolve(BASEDIR))) {
     fs.mkdirSync(BASEDIR);
   }
 
-  const config = await getConfig();
+  const { config, filepath } = await getConfig();
+
+  if (!fs.existsSync(path.resolve(config.dest))) {
+    configSpinner.fail(`${config.dest} is not existing`);
+    return;
+  }
+
+  configSpinner.succeed(`Config loaded from ${filepath}`);
+
   const browser = await createBrowser();
   const context = config.auth
     ? await createAuthContext(browser, config) 
     : await createContext(browser, config);
   const page = await context.newPage();
 
-  if (!config.screenshots) {
-    throw new Error('None screenshots are defined')
-  }
-
   for await (const name of Object.keys(config.screenshots)) {
+    const screenshotSpinner = ora(`Taking "${name}" screenshot`).start();
+    screenshotSpinner.indent = 0;
+
     const screenshot = config.screenshots[name];
-    
-    await setupScreenshotPage(page, { config, screenshot });
-    await takeScreenshot(page, { name, dest: config.dest })
+
+    if (screenshot.skip) {
+      screenshotSpinner.info(`Taking "${name}" screenshot [SKIPPED]`);
+
+      continue;
+    }
+
+    if (typeof screenshot.auth !== 'undefined' && !screenshot.auth) {
+      // const unauthorizedBrowser = await createBrowser({ headless: false });
+      const unauthorizedContext = await createContext(browser, config);
+      const unauthorizedPage = await unauthorizedContext.newPage();
+
+      await setupScreenshotPage(unauthorizedPage, { config, screenshot });
+
+      if (screenshot.wait) {
+        let _wait = screenshot.wait;
+  
+        if (typeof screenshot.wait === 'string') {
+          _wait = ms(screenshot.wait);
+        }
+  
+        screenshotSpinner.warn(`Taking "${name}" screenshot [SLEEPING ${ms(Number(_wait))}]`);
+  
+        await sleep(Number(_wait));
+      }
+  
+      await takeScreenshot(unauthorizedPage, { name, dest: config.dest });
+  
+      screenshotSpinner.succeed(`"${name}" screenshot taken 📸`);
+    } else {
+      await setupScreenshotPage(page, { config, screenshot });
+
+      if (screenshot.wait) {
+        let _wait = screenshot.wait;
+  
+        if (typeof screenshot.wait === 'string') {
+          _wait = ms(screenshot.wait);
+        }
+  
+        screenshotSpinner.warn(`Taking "${name}" screenshot [SLEEPING ${ms(Number(_wait))}]`);
+  
+        await sleep(Number(_wait));
+      }
+  
+      await takeScreenshot(page, { name, dest: config.dest });
+  
+      screenshotSpinner.succeed(`"${name}" screenshot taken 📸`);
+    }
   }
 
   await browser.close();

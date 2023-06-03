@@ -1,5 +1,6 @@
 import { cosmiconfigSync, cosmiconfig } from 'cosmiconfig';
 import { z } from 'zod';
+import { zodToJsonSchema } from "zod-to-json-schema";
 
 export const Config = z.object({
   url: z.string().url(),
@@ -18,7 +19,10 @@ export const Config = z.object({
   }).optional(),
   screenshots: z.record(z.object({
     url: z.string().url().optional(),
-    path: z.string().startsWith('/')
+    path: z.string().startsWith('/'),
+    skip: z.boolean().optional(),
+    auth: z.boolean().optional(),
+    wait: z.number().or(z.string()).optional()
   }))
 });
 
@@ -36,7 +40,7 @@ export async function getConfig() {
     throw new Error('Config not found');
   }
 
-  return Config.parse(searched.config);
+  return { config: Config.parse(searched.config), filepath: searched.filepath };
 }
 
 export function getConfigSync() {
@@ -48,5 +52,9 @@ export function getConfigSync() {
     throw new Error('Config not found');
   }
 
-  return Config.parse(searched.config);
+  return { config: Config.parse(searched.config), filepath: searched.filepath };
+}
+
+export function getConfigJSONScheme() {
+  return zodToJsonSchema(Config, "scrshot");
 }

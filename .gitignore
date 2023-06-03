@@ -4,3 +4,6 @@ dist
 stencil-generated
 .astro
 .scrshot
+.npmrc
+.env
+.next
