@@ -1,0 +1,30 @@
+:host {
+  display: block;
+  position: fixed;
+  bottom: 0;
+  left: 0;
+  z-index: 2147483647;
+}
+
+.container {
+  padding: 4px;
+}
+
+.button {
+  padding: 4px 8px;
+  border-radius: 12px;
+  border: 1px solid #ccc;
+  background: #fff;
+}
+
+.off {
+  color: red;
+}
+
+.on {
+  color: green;
+}
+
+.hide {
+  display: none;
+}

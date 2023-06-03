@@ -1,0 +1,9 @@
+{
+  "url": "http://localhost:3000",
+  "dest": "public/screenshots",
+  "screenshots": {
+    "homepage": {
+      "path": "/"
+    }
+  }
+}

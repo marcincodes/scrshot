@@ -1,0 +1,30 @@
+{
+  "name": "@scrshot/helpers",
+  "version": "0.0.1",
+  "author": "Marcin Skrzyński",
+  "license": "AGPLv3",
+  "private": true,
+  "exports": {
+    ".": {
+      "import": "./dist/index.mjs",
+      "require": "./dist/index.cjs",
+      "types": "./dist/index.d.ts"
+    }
+  },
+  "main": "./dist/index.cjs",
+  "types": "./dist/index.d.ts",
+  "files": [
+    "dist"
+  ],
+  "scripts": {
+    "build": "unbuild",
+    "dev": "unbuild --stub",
+    "check-types": "tsc --noEmit"
+  },
+  "dependencies": {
+    "zod": "3.21.4"
+  },
+  "devDependencies": {
+    "typescript": "4.9.4"
+  }
+}

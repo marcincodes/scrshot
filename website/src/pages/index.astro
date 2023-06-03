@@ -1,0 +1,326 @@
+---
+import { SITE } from '~/config.mjs';
+import Layout from '~/layouts/PageLayout.astro';
+
+import Hero from '~/components/widgets/Hero.astro';
+import Note from '~/components/widgets/Note.astro';
+import Features from '~/components/widgets/Features.astro';
+import Features2 from '~/components/widgets/Features2.astro';
+import Steps from '~/components/widgets/Steps.astro';
+import Content from '~/components/widgets/Content.astro';
+import LatestPosts from '~/components/blog/LatestPosts.astro';
+import FAQs from '~/components/widgets/FAQs.astro';
+import Stats from '~/components/widgets/Stats.astro';
+import CallToAction from '~/components/widgets/CallToAction.astro';
+
+const meta = {
+  title: SITE.title,
+  description: SITE.description,
+  dontUseTitleTemplate: true,
+};
+---
+
+<Layout {meta}>
+  <!-- Hero Widget ******************* -->
+
+  <Hero
+    callToAction={{ text: 'Preorder', href: 'https://scrshot.lemonsqueezy.com/checkout/buy/19711312-9868-4e9d-8401-e1012bdfc7b6?logo=0', icon: 'tabler:shopping-cart' }}
+    callToAction2={{ text: 'Learn more', href: '#features' }}
+    image={{ src: import('~/assets/images/hero.png'), alt: 'AstroWind Hero Image' }}
+  >
+    <Fragment slot="title">
+      Create <span class="text-accent dark:text-white highlight">up-to-date</span> application screenshots 
+    </Fragment>
+
+    <Fragment slot="subtitle">
+      <span class="hidden sm:inline">
+        <span class="font-semibold">scrshot.dev</span> is a customizable tool for taking screenshot of your application. 
+        </span>
+        Make changes to your application and screenshots will be automatically updated as well.
+    </Fragment>
+  </Hero>
+
+  <!-- Note Widget ******************* -->
+
+  <Note />
+
+  <!-- Features Widget *************** -->
+
+  <Features
+    highlight="Features"
+    title="What you get with scrshot.dev"
+    subtitle="Create screenshots and update them with your product"
+    items={[
+      [
+        {
+          title: 'Automatic',
+          description: 'A seamless integration with your app. Just run one command and screenshot will be up-to-date',
+          icon: 'tabler:robot',
+        },
+        {
+          title: 'Ready-to-use Components',
+          description:
+            'Our components let you to create screenshot area, prevent floating elements scrolling into it or marking important parts',
+          icon: 'tabler:components',
+        },
+        {
+          title: 'Devtools',
+          description: 'Devtools you will be able to preview screenshot before it will be taken',
+          icon: 'tabler:list-check',
+        },
+      ],
+      [
+        {
+          title: 'Excellent Speed',
+          description: 'Speed-up your documenting workflow with fresh screenshots on every change',
+          icon: 'tabler:rocket',
+        },
+        {
+          title: 'Authorization Agnostic',
+          description: 'You can take screenshot in your current application. This will let you integrate scrshot.dev into your existing projects',
+          icon: 'tabler:key',
+        },
+        {
+          title: 'Open to new ideas and improvements',
+          description: 'scrshot.dev will be improved and new features will be added',
+          icon: 'tabler:bulb',
+        },
+      ],
+    ]}
+  />
+
+  <!-- Content Widget **************** -->
+
+  <Content
+    id="preorder"
+    highlight="Preorder"
+    title="What's in it for me?"
+    items={[
+      // {
+      //   title: 'Up to date screenshots',
+      //   description: 'Your documentation pages are always up-to-date',
+      // },
+      {
+        title: 'Lifetime license',
+        description: 'Buy once and use for the whole life of your product',
+      },
+      {
+        title: 'Fair price',
+        description: 'Pay what you want, and get your license',
+      },
+      {
+        title: 'Dedicated support',
+        description: 'I would love to help you with your application setup',
+      },
+      {
+        title: 'Influence on new features',
+      },
+      {
+        title: 'Support independent indie hacker',
+      },
+    ]}
+    image={{
+      src: import('~/assets/images/caos.jpg'),
+      alt: 'Colorful Image',
+    }}
+  >
+    <Fragment slot="content">
+      <h3 class="text-2xl font-bold tracking-tight dark:text-white sm:text-3xl mb-2">Buying now</h3>
+      gives your lot's of unique adventages over regular sell
+    </Fragment>
+  </Content>
+
+  <!-- Content Widget **************** -->
+
+  <!-- <Content
+    isReversed
+    isAfterContent
+    items={[
+      {
+        title: 'Influence on new features',
+      },
+      {
+        title: 'Support independent indie hacker',
+      },
+      {
+        title: 'Nulla omittam sadipscing mel ne',
+      },
+      {
+        title: 'Per ei quaeque sensibus',
+      },
+      {
+        title: 'Cu imperdiet posidonium sed',
+      },
+      {
+        title: 'Nulla omittam sadipscing mel ne',
+      },
+    ]}
+    image={{
+      src: import('~/assets/images/vintage.jpg'),
+      alt: 'Vintage Image',
+    }}
+  /> -->
+
+  <!-- Steps Widget ****************** -->
+
+  <Steps
+    id="how-it-works"
+    title="How it works"
+    items={[
+      {
+        title: 'Step 1: <span class="font-medium">Add config</span>',
+        description: 'Place scrshot config in your application. You can add authorization settings, screenshots destination and lot\'s more.',
+        icon: 'tabler:settings-automation',
+      },
+      {
+        title: 'Step 2: <span class="font-medium">Annotate your app</em>',
+        description: 'Prepar screenshot area, floating elements and mark important parts of your app. Preview your screenshot using devtools be certain how screenshot will look like',
+        icon: 'tabler:crosshair',
+      },
+      {
+        title: 'Step 3: <span class="font-medium">Run command</span>',
+        description: 'Let <span class="highlight">scrshot</span> do it\'s magic 🪄',
+        icon: 'tabler:power',
+      },
+      {
+        title: 'Done!',
+        icon: 'tabler:check',
+      },
+    ]}
+    image={{
+      src: import('~/assets/images/code.png'),
+      alt: 'Steps image',
+    }}
+  />
+
+  <!-- Features2 Widget ************** -->
+
+  <Features2
+    id="benefits"
+    title="There is more inside"
+    subtitle="Boost your productivity with up-to-date generated screenshots"
+    highlight="Benefits"
+    items={[
+      {
+        title: 'Developers-friendly',
+        description: 'You decide what to include in the screenshot and what\'s not. No need for design skills - just code.',
+        icon: 'flat-color-icons:gallery',
+      },
+      {
+        title: 'Programmatical screenshots',
+        description: 'Taking screenshots is as easy as running one command. Environment can be configured for best-look of your app.',
+        icon: 'flat-color-icons:command-line',
+      },
+      {
+        title: 'Framework agnostic',
+        description: 'Support for multiple applications architecture. No matter if your product is SPA or MPA application.',
+        icon: 'flat-color-icons:todo-list',
+      },
+      {
+        title: 'Improve documentation',
+        description: 'Your documentation pages are always up-to-date. Stop customers complaining about outdated screenshots',
+        icon: 'flat-color-icons:document',
+      },
+      {
+        title: 'Call-to-Action',
+        description: '',
+        icon: 'flat-color-icons:advertising',
+      },
+      {
+        title: 'Pricing',
+        description: 'Fair pricing - pay what you want. You will get liftime access to current and new features.',
+        icon: 'flat-color-icons:currency-exchange',
+      },
+    ]}
+  />
+
+  <!-- HighlightedPosts Widget ******* -->
+
+  <!-- <LatestPosts
+    title="Find out more content in our Blog"
+    information={`The blog is used to display AstroWind documentation.
+                        Each new article will be an important step that you will need to know to be an expert in creating a website using Astro + Tailwind CSS.
+                        Astro is a very interesting technology. Thanks.
+                `}
+    postIds={[
+      'get-started-website-with-astro-tailwind-css.md',
+      'how-to-customize-astrowind-to-your-brand.md',
+      'useful-resources-to-create-websites.md',
+      'astrowind-template-in-depth.md',
+    ]}
+  /> -->
+
+  <!-- FAQs Widget ******************* -->
+
+  <FAQs
+    title="Frequently Asked Questions"
+    subtitle="You probably have some of questions. Let me answer them brefiely."
+    highlight="FAQs"
+    items={[
+      [
+        {
+          question: 'What do I need to start?',
+          answer:
+            'Space, the final frontier. These are the voyages of the Starship Enterprise. Its five-year mission: to explore strange new worlds. Many say exploration is part of our destiny, but it’s actually our duty to future generations.',
+        },
+        {
+          question: 'How to install the Astro + Tailwind CSS template?',
+          answer:
+            "Well, the way they make shows is, they make one show. That show's called a pilot. Then they show that show to the people who make shows, and on the strength of that one show they decide if they're going to make more shows. Some pilots get picked and become television programs. Some don't, become nothing. She starred in one of the ones that became nothing.",
+        },
+        {
+          question: "What's something that you don't understand?",
+          answer:
+            "A flower in my garden, a mystery in my panties. Heart attack never stopped old Big Bear. I didn't even know we were calling him Big Bear.",
+        },
+      ],
+      [
+        {
+          question: "What's an example of when you changed your mind?",
+          answer:
+            "Michael Knight a young loner on a crusade to champion the cause of the innocent. The helpless. The powerless in a world of criminals who operate above the law. Here he comes Here comes Speed Racer. He's a demon on wheels.",
+        },
+        {
+          question: 'What is something that you would like to try again?',
+          answer:
+            "A business big enough that it could be listed on the NASDAQ goes belly up. Disappears! It ceases to exist without me. No, you clearly don't know who you're talking to, so let me clue you in.",
+        },
+        {
+          question: 'If you could only ask one question to each person you meet, what would that question be?',
+          answer:
+            "This is not about revenge. This is about justice. A lot of things can change in twelve years, Admiral. Well, that's certainly good to know. About four years. I got tired of hearing how young I looked.",
+        },
+      ],
+    ]}
+  />
+
+  <!-- Stats Widget ****************** -->
+
+  <Stats
+    items={[
+      { name: 'Downloads', value: '132K' },
+      { name: 'Stars', value: '24.8K' },
+      { name: 'Forks', value: '10.3K' },
+      { name: 'Users', value: '48.4K' },
+    ]}
+  />
+
+  <!-- CallToAction Widget *********** -->
+
+  <CallToAction
+    callToAction={{
+      text: 'Get template',
+      href: 'https://github.com/onwidget/astrowind',
+      icon: 'tabler:download',
+    }}
+  >
+    <Fragment slot="title">
+      Astro + <br class="block sm:hidden" /><span class="sm:whitespace-nowrap">Tailwind CSS</span>
+    </Fragment>
+
+    <Fragment slot="subtitle">
+      Be very surprised by these huge fake numbers you are seeing on this page. <br class="hidden md:inline" />Don't
+      waste more time! :P
+    </Fragment>
+  </CallToAction>
+</Layout>

@@ -1,0 +1,31 @@
+<!DOCTYPE html>
+<html dir="ltr" lang="en">
+  <head>
+    <meta charset="utf-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0, minimum-scale=1.0, maximum-scale=5.0" />
+    <title>Stencil Component Starter</title>
+
+    <script type="module" src="/build/core.esm.js"></script>
+    <script nomodule src="/build/core.js"></script>
+  </head>
+  <body>
+    <scrshot-area>
+      <scrshot-prevent-scrolling>
+        <div style="width: 100%; position: fixed; top: 0; background: #fff; outline: green 1px solid;">I'm scrolling</div>
+      </scrshot-prevent-scrolling>
+      <div style="width: 100px; height: 100px; padding: 10px;">I will be included in screenshot</div>
+      <div  style="margin: 10px">
+        <scrshot-mark>
+            <div>Lorem ipsum</div>
+        </scrshot-mark>
+      </div>
+      <br />
+      <div  style="margin: 10px"></div>
+        <scrshot-mark display="inline-block">
+          Test 123
+        </scrshot-mark>
+      </div>
+    </scrshot-area>
+    <scrshot-debug></scrshot-debug>
+  </body>
+</html>

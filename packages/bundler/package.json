@@ -1,0 +1,32 @@
+{
+  "name": "@scrshot/bundler",
+  "version": "0.0.1",
+  "author": "Marcin Skrzyński",
+  "license": "AGPL-v3",
+  "private": true,
+  "exports": {
+    ".": {
+      "import": "./dist/index.mjs",
+      "require": "./dist/index.cjs",
+      "types": "./dist/index.d.ts"
+    }
+  },
+  "main": "./dist/index.cjs",
+  "types": "./dist/index.d.ts",
+  "files": [
+    "dist"
+  ],
+  "scripts": {
+    "build": "unbuild",
+    "dev": "unbuild --stub",
+    "check-types": "tsc --noEmit"
+  },
+  "dependencies": {
+    "magicast": "^0.2.9",
+    "unplugin": "^1.3.1",
+    "@scrshot/helpers": "0.0.1"
+  },
+  "devDependencies": {
+    "typescript": "4.9.4"
+  }
+}

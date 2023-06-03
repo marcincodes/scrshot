@@ -1,0 +1,42 @@
+:host {
+  display: block;
+  position: relative;
+}
+
+.debug {
+  position: relative;
+  z-index: 2147483647;
+  background: #fff;
+}
+
+.backdrop {
+  z-index: 2147483646;
+  background: rgba(0, 0, 0, 0.5);
+  position: fixed;
+  top: 0;
+  left: 0;
+  bottom: 0;
+  right: 0;
+}
+
+.measure {
+  border-radius: 12px;
+  display: none;
+  z-index: 2147483647;
+  background: #fff;
+  padding: 4px 8px;
+  border-radius: 12px;
+  border: 1px solid #ccc;
+  background: #fff;
+  margin-top: 4px;
+  box-sizing: border-box;
+  align-items: center;
+  position: absolute;
+  right: 0;
+  height: 25px;
+  font-size: 14px;
+}
+
+.measure.debug {
+  display: inline-flex;
+}

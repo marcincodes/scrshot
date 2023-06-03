@@ -1,0 +1,24 @@
+{
+  "name": "scrshot",
+  "version": "1.0.0",
+  "description": "",
+  "main": "index.js",
+  "private": true,
+  "workspaces": [
+    "packages/*",
+    "examples/*",
+    "website"
+  ],
+  "scripts": {
+    "test": "echo \"Error: no test specified\" && exit 1",
+    "cli": "yarn workspace @scrshot/cli",
+    "website": "yarn workspace @scrshot/website",
+    "core": "yarn workspace @scrshot/core",
+    "react": "yarn workspace @scrshot/react",
+    "bundler": "yarn workspace @scrshot/bundler",
+    "helpers": "yarn workspace @scrshot/helpers"
+  },
+  "keywords": [],
+  "author": "Marcin Skrzyński",
+  "license": "ISC"
+}

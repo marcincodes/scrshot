@@ -1,0 +1,7 @@
+[build]
+  publish = "website/dist"
+  command = "yarn website build"
+[[headers]]
+  for = "website/assets/*"
+  [headers.values]
+    Cache-Control = "public, max-age=31536000, immutable"

@@ -1,0 +1,9 @@
+:host {
+  display: block;
+}
+
+.mark {
+  outline-offset: var(--outline-offset, 4px);
+  outline: 1px solid red;
+  display: var(--scrshot-display, block);
+}

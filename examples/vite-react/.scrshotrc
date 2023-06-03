@@ -1,0 +1,12 @@
+{
+  "url": "http://127.0.0.1:5173",
+  "dest": "src/assets",
+  "screenshots": {
+    "homepage": {
+      "path": "/"
+    },
+    "homepage2": {
+      "path": "/"
+    }
+  }
+}
