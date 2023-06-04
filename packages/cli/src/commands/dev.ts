@@ -6,6 +6,7 @@ import ora from 'ora';
 import ms from 'ms';
 
 import { Config, getConfig } from '@scrshot/helpers'
+import { validateLicense } from '../helpers/license';
 
 const sleep = (ms: number) => new Promise((resolve) => setTimeout(resolve, ms));
 
@@ -118,6 +119,18 @@ export async function run() {
   }
 
   configSpinner.succeed(`Config loaded from ${filepath}`);
+
+  const licenseSpinner = ora('Validating license').start();
+
+  const { error } = await validateLicense(config.license);
+  
+  if (error) {
+    licenseSpinner.fail('License invalid');
+    return;
+  }
+
+  licenseSpinner.succeed('License valid');
+
 
   const browser = await createBrowser();
   const context = config.auth

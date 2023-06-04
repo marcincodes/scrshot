@@ -5,6 +5,7 @@ import { zodToJsonSchema } from "zod-to-json-schema";
 export const Config = z.object({
   url: z.string().url(),
   dest: z.string(),
+  license: z.string(),
   viewport: z.object({
     width: z.number(),
     height: z.number()
