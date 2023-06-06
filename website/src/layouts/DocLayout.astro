@@ -1,0 +1,67 @@
+---
+import Layout from '~/layouts/BaseLayout.astro';
+import Header from '~/components/widgets/Header.astro';
+import Footer from '~/components/widgets/Footer.astro';
+
+import LeftSidebar from '~/components/docs/LeftSidebar.astro';
+import PageContent from '~/components/docs/PageContent.astro';
+
+// import HeadCommon from '../components/HeadCommon.astro';
+// import HeadSEO from '../components/HeadSEO.astro';
+// import Header from '../components/Header/Header.astro';
+// import PageContent from '../components/PageContent.astro';
+// import RightSidebar from '../components/RightSidebar.astro';
+// import * as CONFIG from '../config';
+import '~/assets/styles/docs.css';
+
+// const { content = {} } = Astro.props;
+const currentPage = new URL(Astro.request.url).pathname;
+// const currentFile = `src/pages${currentPage.replace(/\/$/, '')}.md`;
+
+import { headerData, footerData } from '~/data';
+
+import { MetaSEO } from '~/types';
+
+export interface Props {
+  meta?: MetaSEO;
+}
+
+const { frontmatter } = Astro.props;
+
+const meta = {
+  title: frontmatter.title,
+  description: frontmatter.description
+}
+
+---
+
+<Layout {meta}>
+  <slot name="header">
+    <Header {...headerData} isSticky showRssFeed showToggleTheme />
+  </slot>
+
+  <main>
+    <div class="bg-slate-100">
+      <div class="grid grid-cols-12">
+        <div class="col-span-3 top-0 pt-12 flex">
+          <div class="ml-auto">
+            <LeftSidebar currentPage={currentPage} />
+          </div>
+        </div>
+        <main class="py-4 px-8 pb-32 col-span-6 h-screen  overflow-auto">
+          <div>
+            <PageContent>
+              <slot />
+            </PageContent>
+          </div>
+        </main>
+        <div class="col-span-3 sticky top-0 h-screen flex">
+          <!-- <RightSidebar content={content} /> -->
+        </div>
+      </div>
+    </div>
+  </main>
+  <slot name="footer">
+    <Footer {...footerData} />
+  </slot>
+</Layout>

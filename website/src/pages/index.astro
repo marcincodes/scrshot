@@ -24,9 +24,8 @@ const meta = {
   <!-- Hero Widget ******************* -->
 
   <Hero
-    callToAction={{ text: 'Preorder', href: 'https://scrshot.lemonsqueezy.com/checkout/buy/19711312-9868-4e9d-8401-e1012bdfc7b6?logo=0', icon: 'tabler:shopping-cart' }}
+    callToAction={{ text: 'Preorder', href: 'https://scrshot.lemonsqueezy.com/checkout/buy/19711312-9868-4e9d-8401-e1012bdfc7b6', icon: 'tabler:shopping-cart' }}
     callToAction2={{ text: 'Learn more', href: '#features' }}
-    image={{ src: import('~/assets/images/hero.png'), alt: 'AstroWind Hero Image' }}
   >
     <Fragment slot="title">
       Create <span class="text-accent dark:text-white highlight">up-to-date</span> application screenshots 
@@ -120,7 +119,7 @@ const meta = {
       },
     ]}
     image={{
-      src: import('~/assets/images/caos.jpg'),
+      src: import('~/assets/images/shaking-hands.svg'),
       alt: 'Colorful Image',
     }}
   >
@@ -188,7 +187,7 @@ const meta = {
       },
     ]}
     image={{
-      src: import('~/assets/images/code.png'),
+      src: import('~/assets/images/product-launch.svg'),
       alt: 'Steps image',
     }}
   />
@@ -254,7 +253,7 @@ const meta = {
 
   <FAQs
     title="Frequently Asked Questions"
-    subtitle="You probably have some of questions. Let me answer them brefiely."
+    subtitle="You probably have some questions. Let me answer them brefiely."
     highlight="FAQs"
     items={[
       [
@@ -296,31 +295,31 @@ const meta = {
 
   <!-- Stats Widget ****************** -->
 
-  <Stats
+  <!-- <Stats
     items={[
       { name: 'Downloads', value: '132K' },
       { name: 'Stars', value: '24.8K' },
       { name: 'Forks', value: '10.3K' },
       { name: 'Users', value: '48.4K' },
     ]}
-  />
+  /> -->
 
   <!-- CallToAction Widget *********** -->
 
   <CallToAction
     callToAction={{
-      text: 'Get template',
-      href: 'https://github.com/onwidget/astrowind',
-      icon: 'tabler:download',
+      text: 'Buy preorder',
+      href: 'https://scrshot.lemonsqueezy.com/checkout/buy/19711312-9868-4e9d-8401-e1012bdfc7b6',
+      icon: 'tabler:shopping-cart',
     }}
   >
     <Fragment slot="title">
-      Astro + <br class="block sm:hidden" /><span class="sm:whitespace-nowrap">Tailwind CSS</span>
+      Scrshot + <br class="block sm:hidden" /><span class="sm:whitespace-nowrap">Your project</span>
     </Fragment>
 
     <Fragment slot="subtitle">
-      Be very surprised by these huge fake numbers you are seeing on this page. <br class="hidden md:inline" />Don't
-      waste more time! :P
+      Take scrshot for a spin and try it in your product. Let me know what you think and 
+      where you use it. I would love to know about your use case
     </Fragment>
   </CallToAction>
 </Layout>

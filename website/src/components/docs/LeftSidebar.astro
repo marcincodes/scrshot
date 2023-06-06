@@ -1,0 +1,71 @@
+---
+// import { SIDEBAR } from '../config';
+
+export const SIDEBAR = [
+	{ text: "Getting Started", header: true },
+	{ text: "Introduction", link: "/docs" },
+  { text: "Installation", link: "/docs/cli/installation" },
+
+  { text: "CLI", header: true },
+	{ text: "Introduction", link: "/docs/cli/introduction" },
+  { text: "dev", link: "/docs/cli/dev" },
+	{ text: "generate", link: "/docs/cli/generate" },
+	{ text: "license", link: "/docs/cli/license" },
+
+  { text: "Components", header: true },
+	{ text: "Introduction", link: "/docs/components/introduction" },
+  { text: "Area", link: "/docs/components/scrshot-area" },
+  { text: "Debug", link: "/docs/components/scrshot-debug" },
+  { text: "Prevent Scrolling", link: "/docs/components/scrshot-prevent-scrolling" },
+  { text: "Mark", link: "/docs/components/scrshot-mark" },
+
+  { text: "Bundler", header: true },
+  { text: "Introduction", link: "/docs/bundler/introduction" },
+	{ text: "Vite", link: "/docs/bundler/vite" },
+
+	{ text: "Guides", header: true },
+  { text: "Next.js", link: "/docs/guides/nextjs" },
+];
+
+const { currentPage } = Astro.props;
+const currentPageMatch = currentPage.slice(1);
+
+const isCurrentPage = (item) => {
+	if (item.link) {
+		return item.link === currentPage;
+	}
+	return false;
+};
+
+const getLinkClasses = (link) => {
+	const baseClasses = "block py-2 px-6  my-1 transition-colors border-l hover:border-slate-400 text-slate-500 hover:text-slate-900"
+
+	if (isCurrentPage(link)) {
+		return baseClasses + " border-slate-500 text-slate-900";
+	} else {
+		return baseClasses;
+	}
+}
+
+---
+<aside title="Site Navigation">
+	<!-- <Debug content={navigation} /> -->
+	<nav aria-labelledby="grid-left" class="w-64 p-4 border-r">
+		<ul>
+			{SIDEBAR.map(item => (item.header ? 
+				<h2 class="mt-4 font-semibold text-slate-700">{item.text}</h2> : 
+				<li class={getLinkClasses(item)}>
+					<a href={item.link} class="no-underline">{item.text}</a>
+				</li>))}
+		</ul>
+	</nav>
+</aside>
+
+<script is:inline>
+	window.addEventListener('DOMContentLoaded', (event) => {
+		var target = document.querySelector('[aria-current="page"]');
+		if (target && target.offsetTop > window.innerHeight - 100) {
+			document.querySelector('.nav-groups').scrollTop = target.offsetTop;
+		}
+	});
+</script>

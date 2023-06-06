@@ -84,26 +84,9 @@ const {
         {content && <Fragment set:html={content} />}
       </div>
       <div>
-        {
-          image && (
-            <div class="relative m-auto max-w-5xl">
-              {typeof image === 'string' ? (
-                <Fragment set:html={image} />
-              ) : (
-                <Picture
-                  class="mx-auto rounded-md w-full"
-                  widths={[400, 768, 1024, 2040]}
-                  sizes="(max-width: 767px) 400px, (max-width: 1023px) 768px, (max-width: 2039px) 1024px, 2040px"
-                  aspectRatio={1024 / 576}
-                  loading="eager"
-                  width={1024}
-                  height={576}
-                  {...image}
-                />
-              )}
-            </div>
-          )
-        }
+        <div class="relative m-auto max-w-5xl p-4 border border-solid border-gray-200 rounded-lg bg-gradient-to-r from-slate-100 to-gray-50">
+          <video src="/homepage.mp4" muted autoplay loop class="border border-solid border-gray-300 rounded-md" />
+        </div>
       </div>
     </div>
   </div>
