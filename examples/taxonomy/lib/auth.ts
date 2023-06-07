@@ -8,7 +8,7 @@ import { env } from "@/env.mjs"
 import { siteConfig } from "@/config/site"
 import { db } from "@/lib/db"
 
-function html(params: { url: string; host: string; theme: Theme }) {
+function html(params: { url: string; host: string; theme: any }) {
   const { url, host, theme } = params
 
   const escapedHost = host.replace(/\./g, "&#8203;.")

@@ -3,7 +3,7 @@ import Image from 'next/image'
 export function Screenshot() {
   return (
     <div>
-      <h1>I'm up-to-date screenshot</h1>
+      <h1>I&apos;m up-to-date screenshot</h1>
       <img src="/screenshots/homepage.png" alt='Next.js screenshot' />
       {/* Using NextJS Image cache image */}
       <Image

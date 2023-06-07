@@ -13,9 +13,9 @@ export const env = createEnv({
     DATABASE_URL: z.string().min(1),
     SMTP_FROM: z.string().min(1),
     // EMAIL_SERVER: z.string().min(1),
-    // STRIPE_API_KEY: z.string().min(1),
-    // STRIPE_WEBHOOK_SECRET: z.string().min(1),
-    // STRIPE_PRO_MONTHLY_PLAN_ID: z.string().min(1),
+    STRIPE_API_KEY: z.string().min(1),
+    STRIPE_WEBHOOK_SECRET: z.string().min(1),
+    STRIPE_PRO_MONTHLY_PLAN_ID: z.string().min(1),
   },
   client: {
     NEXT_PUBLIC_APP_URL: z.string().min(1),

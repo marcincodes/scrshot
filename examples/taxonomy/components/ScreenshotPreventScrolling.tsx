@@ -4,10 +4,8 @@ import { ScrshotPreventScrolling } from '@scrshot/react';
 
 export function ScreenshotPreventScrolling({ children }) {
   return (
-    <>
-      <ScrshotPreventScrolling>
-        {children}
-      </ScrshotPreventScrolling>
-    </>
+    <ScrshotPreventScrolling>
+      {children}
+    </ScrshotPreventScrolling>
   )
 }

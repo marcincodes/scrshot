@@ -1,50 +1,138 @@
 import { createUnplugin } from 'unplugin';
 import path from 'path';
 import { getConfigSync } from '@scrshot/helpers';
+import * as recast from 'recast';
+import * as esprima from 'recast/parsers/esprima';
 
-interface UserOptions {}
+interface PluginOptions {
+  /**
+   * Watch images 
+   */
+  watch?: boolean;
 
-const extensions = {
-  react: ['tsx', 'jsx'],
-  vue: ['vue']
-}
+  /**
+   * Strip components from production bundle
+   */
+  strip?: boolean;
+};
 
-function isReact(id, code) {
+const componentNames = [
+  'ScrshotArea',
+  'ScrshotDebug',
+  'ScrshotMark',
+  'ScrshotPreventScrolling'
+];
+
+const transformers = {
+  react(code: string) {
+    console.log(recast, esprima);
+    const ast = recast.parse(code, { parser: esprima });
   
+    recast.visit(ast, {
+      visitImportDeclaration(path) {
+        if (path.node.source.value === "@scrshot/react") {
+          path.prune();
+          return false;
+        }
+        
+        return false;
+      },
+      visitCallExpression(path) {
+        const callee = path.node.callee as any;
+        if (callee.name === "defineCustomElements") {
+           path.prune();
+           return false;
+         }
+         const args = path.node.arguments;
+
+         for (const arg of args) {
+          const _arg = arg as any;
+
+          if (_arg.type === "Identifier" && componentNames.includes(_arg.name)) {
+            _arg.type = 'Literal';
+            _arg.value = 'div';
+          }
+         }
+         
+         this.traverse(path);
+       },
+    });
+  
+    return recast.print(ast);
+  }
 }
 
-export const unplugin = createUnplugin((options: UserOptions) => {
+function hasScrshot(code: string) {
+  if (!code) {
+    return false;
+  }
+
+  return code.includes('@scrshot/');
+}
+
+function getFramework(code: string) {
+  if (code.includes('@scrshot/react')) {
+    return 'react';
+  }
+
+  return null;
+}
+
+export const unplugin = createUnplugin((options: PluginOptions = { watch: true, strip: true }) => {
   return {
     name: 'unplugin-scrshot',
     buildStart() {
-      // watching images not working in vite https://github.com/vitejs/vite/pull/13371
-      // watching images not working in webpack
-      const { config } = getConfigSync();
+      const { watch } = options;
 
-      for (const screenshot of Object.keys(config.screenshots)) {
-        this.addWatchFile(path.resolve(process.cwd(), config.dest, `${screenshot}.png`))
+      if (typeof watch !== 'undefined' && !watch) {
+        // watching images not working in vite https://github.com/vitejs/vite/pull/13371
+        // watching images not working in webpack
+        const { config } = getConfigSync() as any;
+
+        for (const screenshot of Object.keys(config.screenshots)) {
+          this.addWatchFile(path.resolve(process.cwd(), config.dest, `${screenshot}.png`))
+        }
       }
     },
-    // transformInclude(id) {
-    //   return id.endsWith('.tsx')
-    // },
-    transform(code, id) {
-      console.log(code);
-      // console.log(this.parse(code)) // acorn parsing
-    // Partially working
-    //   const mod = parseModule(code);
+    transformInclude(id) {
+      const { strip } = options;
 
-    //   if (mod.imports.ScrshotArea) delete mod.imports.ScrshotArea;
-    //   if (mod.imports.ScrshotDebug) delete mod.imports.ScrshotDebug;
+      if (typeof strip !== 'undefined' && !strip) {
+        return false;
+      }
 
-    //   // if (mod.imports.defineCustomElements) delete mod.imports.defineCustomElements;
+      const { ext, dir } = path.parse(id);
 
-    //   return mod.generate().code
-    //     .replace(/jsx\(ScrshotArea/, 'jsx("div"')
-    //     .replace('/* @__PURE__ */ jsx(ScrshotDebug, {})', '')
-    //     .replace('defineCustomElements();', '');
+      if (dir.includes('node_modules')) {
+        return false
+      }
 
-      return code;
+      return ['.tsx', '.jsx', '.js'].includes(ext);
+    },
+    transform(code) {
+      if (process.env.NODE_ENV.startsWith('develop')) {
+        return code;
+      }
+
+      const { strip } = options;
+
+      if (typeof strip !== 'undefined' && !strip) {
+        return code;
+      }
+
+      if (!hasScrshot(code)) {
+        return code;
+      }
+
+      const framework = getFramework(code);
+
+      switch(framework) {
+        case 'react':
+          return transformers.react(code);
+        default:
+          // this.error('Couldn\'t figure out frameworks you are using');
+          return code;
+      }
     },
   }
 })

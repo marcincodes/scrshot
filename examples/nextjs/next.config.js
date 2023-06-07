@@ -7,7 +7,7 @@ const nextConfig = {
   reactStrictMode: true,
   webpack: (config) => {
     // console.log();
-    config.plugins.push(webpackPlugin())
+    config.plugins.push(webpackPlugin({ strip: false }))
     return config;
   }
 }

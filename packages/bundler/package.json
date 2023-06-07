@@ -2,7 +2,7 @@
   "name": "@scrshot/bundler",
   "version": "0.0.2",
   "author": "Marcin Skrzyński",
-  "license": "AGPL-v3",
+  "license": "AGPLv3",
   "private": true,
   "exports": {
     ".": {
@@ -22,9 +22,10 @@
     "check-types": "tsc --noEmit"
   },
   "dependencies": {
+    "@scrshot/helpers": "0.0.1",
     "magicast": "^0.2.9",
-    "unplugin": "^1.3.1",
-    "@scrshot/helpers": "0.0.1"
+    "recast": "^0.23.2",
+    "unplugin": "^1.3.1"
   },
   "devDependencies": {
     "typescript": "4.9.4"
