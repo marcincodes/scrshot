@@ -27,18 +27,18 @@ p {
   color: theme("colors.slate.600");
 }
 
-ul {
+article ul {
   list-style: square;
   margin-top: 0.77rem;
   color: theme("colors.slate.600");
   margin-bottom: 0.33rem;
 }
 
-ul li {
+article ul li {
   margin-top: 0.33rem;
 }
 
-a {
+article a {
   text-decoration: underline;
   text-underline-offset: 2px;
 }
