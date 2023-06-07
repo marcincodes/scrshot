@@ -11,8 +11,17 @@ export namespace Components {
     interface ScrshotDebug {
     }
     interface ScrshotMark {
-        "display": CSSStyleDeclaration['display'];
-        "offset": number;
+        "arrow": {
+    color?: string;
+    placement?: 'top' | 'right' | 'bottom' | 'left' | 'bottom-start' | 'bottom-end' | 'top-start' | 'top-end'
+    offset?: number
+  };
+        "display": 'block' | 'inline-block' | 'flex' | 'inline-flex';
+        "outline": {
+    color?: string;
+    offset?: number;
+    width?: number
+  };
     }
     interface ScrshotPreventScrolling {
     }
@@ -55,8 +64,17 @@ declare namespace LocalJSX {
     interface ScrshotDebug {
     }
     interface ScrshotMark {
-        "display"?: CSSStyleDeclaration['display'];
-        "offset"?: number;
+        "arrow"?: {
+    color?: string;
+    placement?: 'top' | 'right' | 'bottom' | 'left' | 'bottom-start' | 'bottom-end' | 'top-start' | 'top-end'
+    offset?: number
+  };
+        "display"?: 'block' | 'inline-block' | 'flex' | 'inline-flex';
+        "outline"?: {
+    color?: string;
+    offset?: number;
+    width?: number
+  };
     }
     interface ScrshotPreventScrolling {
     }

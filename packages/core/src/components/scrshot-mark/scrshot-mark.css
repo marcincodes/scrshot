@@ -1,9 +1,36 @@
 :host {
   display: block;
+  position: relative;
 }
 
 .mark {
-  outline-offset: var(--outline-offset, 4px);
-  outline: 1px solid red;
+  outline-style: solid;
+  outline-offset: var(--scrshot-outline-offset, 4px);
+  outline-width: var(--scrshot-outline-width, 1px);
+  outline-color: var(--scrshot-outline-color, red);
   display: var(--scrshot-display, block);
+}
+
+.arrow {
+  visibility: hidden;
+  position: absolute;
+  top: 0;
+  left: 0;
+  color: var(--scrshot-arrow-color, red);
+}
+
+.arrow.show {
+  visibility: initial;
+}
+
+.position-top {
+  transform: rotate(180deg);
+}
+
+.position-right {
+  transform: rotate(-90deg);
+}
+
+.position-left {
+  transform: rotate(90deg);
 }
