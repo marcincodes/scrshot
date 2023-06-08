@@ -7,6 +7,8 @@
 yarn changeset
 ```
 
+normal release
+
 ```bash
 yarn changeset version
 ```

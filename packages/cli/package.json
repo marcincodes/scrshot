@@ -1,10 +1,19 @@
 {
   "name": "@scrshot/cli",
-  "version": "0.0.0-dev-20230608122042",
+  "version": "0.0.0-dev-20230608124649",
+  "description": "CLI for Scrshot - Create up-to-date application screenshots",
   "type": "module",
-  "author": "Marcin Skrzyński",
+  "keywords": [
+    "cli",
+    "screenshots",
+    "up-to-date screenshots"
+  ],
+  "author": {
+    "name": "Marcin Skrzyński",
+    "url": "https://marcin.page/"
+  },
+  "homepage": "https://scrshot.dev",
   "license": "AGPLv3",
-  "private": true,
   "bin": {
     "scrshot": "index.js"
   },
@@ -24,7 +33,7 @@
     "unbuild": "^1.2.1"
   },
   "dependencies": {
-    "@scrshot/config": "0.0.0-dev-20230608122042",
+    "@scrshot/config": "0.0.0-dev-20230608124649",
     "minimist": "^1.2.8",
     "ms": "^2.1.3",
     "node-fetch": "^3.3.1",

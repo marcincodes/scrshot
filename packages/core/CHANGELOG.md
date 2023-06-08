@@ -1,31 +1,19 @@
 # @scrshot/core
 
-## 0.0.0-dev-20230608121919
-
-## 0.0.0-dev-20230608121725
-
-## 0.0.0-dev-20230608121504
+## 0.0.0-dev-20230608124649
 
 ### Patch Changes
 
 - test bump
 
-## 0.0.0-dev-20230608120619
+## 0.0.0-dev-20230608124107
 
 ### Patch Changes
 
-- test snapshot bump
+- test bump
 
-## 0.0.3
-
-### Patch Changes
-
-- Test bump
-
-  This is test bump expanded by changest file
-
-## 0.0.2
+## 0.0.0
 
 ### Patch Changes
 
-- Test bump
+- release package

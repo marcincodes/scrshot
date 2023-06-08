@@ -1,46 +1,39 @@
 # @scrshot/bundler
 
-## 0.0.0-dev-20230608122154
+## 0.0.0-dev-20230608124649
 
 ### Patch Changes
 
 - test bump
+- Updated dependencies
+  - @scrshot/config@0.0.0-dev-20230608124649
 
-## 0.0.0-dev-20230608122042
+## 0.0.0-dev-20230608124107
 
 ### Patch Changes
 
+- test bump
 - Updated dependencies
-  - @scrshot/config@0.0.0-dev-20230608122042
-
-## 0.0.0-dev-20230608121919
-
-### Patch Changes
-
-- Updated dependencies
-  - @scrshot/config@0.0.0-dev-20230608121919
-
-## 0.0.0-dev-20230608120619
-
-### Patch Changes
-
-- test snapshot bump
-- Updated dependencies
-  - @scrshot/config@0.0.0-dev-20230608120619
-
-## 0.0.3
-
-### Patch Changes
-
-- Test bump
-
-  This is test bump expanded by changest file
-
-- Updated dependencies
-  - @scrshot/config@0.0.3
+  - @scrshot/config@0.0.0-dev-20230608124107
 
 ## 0.0.2
 
 ### Patch Changes
 
-- Test bump
+- release package
+
+## 0.0.1
+
+### Patch Changes
+
+- release package
+- Updated dependencies
+  - @scrshot/config@0.0.1
+
+## 0.0.0
+
+### Patch Changes
+
+- release package
+- Updated dependencies
+  - @scrshot/config@0.0.0

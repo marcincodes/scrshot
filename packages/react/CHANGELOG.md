@@ -1,49 +1,25 @@
 # @scrshot/react
 
-## 0.0.0-dev-20230608121919
+## 0.0.0-dev-20230608124649
 
 ### Patch Changes
 
 - test bump
-  - @scrshot/core@0.0.0-dev-20230608121919
-
-## 0.0.0-dev-20230608121725
-
-### Patch Changes
-
-- test bump dev
-  - @scrshot/core@0.0.0-dev-20230608121725
-
-## 0.0.0-dev-20230608121504
-
-### Patch Changes
-
 - Updated dependencies
-  - @scrshot/core@0.0.0-dev-20230608121504
+  - @scrshot/core@0.0.0-dev-20230608124649
 
-## 0.0.0-dev-20230608120619
-
-### Patch Changes
-
-- test snapshot bump
-- Updated dependencies
-  - @scrshot/core@0.0.0-dev-20230608120619
-
-## 0.0.3
+## 0.0.0-dev-20230608124107
 
 ### Patch Changes
 
-- Test bump
-
-  This is test bump expanded by changest file
-
+- test bump
 - Updated dependencies
-  - @scrshot/core@0.0.3
+  - @scrshot/core@0.0.0-dev-20230608124107
 
-## 0.0.2
+## 0.0.0
 
 ### Patch Changes
 
-- Test bump
+- release package
 - Updated dependencies
-  - @scrshot/core@0.0.2
+  - @scrshot/core@0.0.0

@@ -1,12 +1,18 @@
 {
   "name": "@scrshot/core",
-  "version": "0.0.0-dev-20230608121919",
-  "description": "Create up-to-date application screenshots",
+  "version": "0.0.0-dev-20230608124649",
+  "description": "Web Components for Scrshot - Create up-to-date application screenshots",
   "keywords": [
     "cli",
     "screenshots",
     "up-to-date screenshots"
   ],
+  "author": {
+    "name": "Marcin Skrzyński",
+    "url": "https://marcin.page/"
+  },
+  "homepage": "https://scrshot.dev",
+  "license": "AGPLv3",
   "main": "dist/index.cjs.js",
   "module": "dist/index.js",
   "es2015": "dist/esm/index.mjs",
@@ -36,10 +42,5 @@
     "jest": "^27.5.1",
     "jest-cli": "^27.5.1",
     "puppeteer": "^19.5.2"
-  },
-  "author": {
-    "name": "Marcin Skrzyński",
-    "url": "https://marcin.page/"
-  },
-  "license": "AGPLv3"
+  }
 }
