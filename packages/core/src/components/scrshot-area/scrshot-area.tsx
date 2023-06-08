@@ -8,7 +8,7 @@ import store from '../../store';
   shadow: true,
 })
 export class ScreenshotArea {
-  @Element() host = null;
+  @Element() host!: HTMLElement;
 
   render() {
     const { width, height } = this.host.getBoundingClientRect();

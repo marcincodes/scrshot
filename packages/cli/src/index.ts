@@ -1,4 +1,3 @@
-// @ts-expect-error
 import minimist from 'minimist';
 
 import dev from './commands/dev';

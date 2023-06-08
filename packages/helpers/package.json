@@ -22,8 +22,9 @@
     "check-types": "tsc --noEmit"
   },
   "dependencies": {
+    "cosmiconfig": "8.2.0",
     "zod": "3.21.4",
-    "zod-to-json-schema": "^3.21.1"
+    "zod-to-json-schema": "3.21.1"
   },
   "devDependencies": {
     "typescript": "4.9.4"

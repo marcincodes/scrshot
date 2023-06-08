@@ -2,7 +2,7 @@ import { createUnplugin } from 'unplugin';
 import path from 'path';
 import { getConfigSync } from '@scrshot/helpers';
 import * as recast from 'recast';
-import * as esprima from 'recast/parsers/esprima';
+import * as esprima from 'recast/parsers/esprima.js';
 
 interface PluginOptions {
   /**
@@ -25,7 +25,6 @@ const componentNames = [
 
 const transformers = {
   react(code: string) {
-    console.log(recast, esprima);
     const ast = recast.parse(code, { parser: esprima });
   
     recast.visit(ast, {
@@ -87,7 +86,7 @@ export const unplugin = createUnplugin((options: PluginOptions = { watch: true, 
       if (typeof watch !== 'undefined' && !watch) {
         // watching images not working in vite https://github.com/vitejs/vite/pull/13371
         // watching images not working in webpack
-        const { config } = getConfigSync() as any;
+        const { config } = getConfigSync();
 
         for (const screenshot of Object.keys(config.screenshots)) {
           this.addWatchFile(path.resolve(process.cwd(), config.dest, `${screenshot}.png`))
@@ -130,15 +129,15 @@ export const unplugin = createUnplugin((options: PluginOptions = { watch: true, 
         case 'react':
           return transformers.react(code);
         default:
-          // this.error('Couldn\'t figure out frameworks you are using');
           return code;
       }
     },
   }
 })
 
-export const vitePlugin = unplugin.vite
-export const rollupPlugin = unplugin.rollup
-export const webpackPlugin = unplugin.webpack
-export const rspackPlugin = unplugin.rspack
-export const esbuildPlugin = unplugin.esbuild
+// FAILING when uncommented
+// export const vitePlugin = unplugin.vite
+// export const rollupPlugin = unplugin.rollup
+// export const webpackPlugin = unplugin.webpack
+// export const rspackPlugin = unplugin.rspack
+// export const esbuildPlugin = unplugin.esbuild

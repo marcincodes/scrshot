@@ -2,7 +2,7 @@ export default {
   entries: [
     './index',
   ],
-  declaration: false,
+  declaration: true,
   failOnWarn: false,
   rollup: {
     emitCJS: true,

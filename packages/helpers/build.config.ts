@@ -5,6 +5,7 @@ export default {
   declaration: true,
   failOnWarn: false,
   rollup: {
+    inlineDependencies: false,
     emitCJS: true,
   },
 }

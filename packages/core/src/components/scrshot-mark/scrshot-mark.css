@@ -12,7 +12,7 @@
 }
 
 .arrow {
-  visibility: hidden;
+  visibility: none;
   position: absolute;
   top: 0;
   left: 0;
@@ -20,7 +20,7 @@
 }
 
 .arrow.show {
-  visibility: initial;
+  visibility: block;
 }
 
 .position-top {

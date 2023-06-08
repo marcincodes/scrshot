@@ -1,5 +1,5 @@
 // import { webpackPlugin } from '@scrshot/bundler';
-const webpackPlugin = require('@scrshot/bundler').webpackPlugin
+const unplugin = require('@scrshot/bundler').unplugin
 // console.log(webpackPlugin)
 
 /** @type {import('next').NextConfig} */
@@ -7,7 +7,7 @@ const nextConfig = {
   reactStrictMode: true,
   webpack: (config) => {
     // console.log();
-    config.plugins.push(webpackPlugin({ strip: false }))
+    config.plugins.push(unplugin.webpack({ strip: true }))
     return config;
   }
 }
