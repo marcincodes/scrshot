@@ -2,7 +2,7 @@
 
 # Scrshot
 
-Package containing web components for [Scrshot](https://scrshot.dev/). It's also refered as "core" components.
+Package containing react components for [Scrshot](https://scrshot.dev/).
 
 ## Installation
 
@@ -11,19 +11,19 @@ You can install them from npm package registry:
 Using npm:
 
 ```bash
-npm install @scrshot/core
+npm install @scrshot/react
 ```
 
 Using yarn:
 
 ```bash
-yarn add @scrshot/core
+yarn add @scrshot/react
 ```
 
 Using pnpm:
 
 ```bash
-pnpm add @scrshot/core
+pnpm add @scrshot/react
 ```
 
 ## Usage

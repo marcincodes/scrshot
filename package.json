@@ -11,12 +11,12 @@
   ],
   "scripts": {
     "test": "echo \"Error: no test specified\" && exit 1",
+    "website": "yarn workspace website",
     "cli": "yarn workspace @scrshot/cli",
-    "website": "yarn workspace @scrshot/website",
     "core": "yarn workspace @scrshot/core",
     "react": "yarn workspace @scrshot/react",
     "bundler": "yarn workspace @scrshot/bundler",
-    "helpers": "yarn workspace @scrshot/helpers"
+    "conf": "yarn workspace @scrshot/config"
   },
   "keywords": [],
   "author": "Marcin Skrzyński",

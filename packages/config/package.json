@@ -1,6 +1,6 @@
 {
-  "name": "@scrshot/helpers",
-  "version": "0.0.1",
+  "name": "@scrshot/config",
+  "version": "0.0.0-dev-20230608122042",
   "author": "Marcin Skrzyński",
   "license": "AGPLv3",
   "private": true,

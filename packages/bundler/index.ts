@@ -1,6 +1,6 @@
 import { createUnplugin } from 'unplugin';
 import path from 'path';
-import { getConfigSync } from '@scrshot/helpers';
+import { getConfigSync } from '@scrshot/config';
 import * as recast from 'recast';
 import * as esprima from 'recast/parsers/esprima.js';
 

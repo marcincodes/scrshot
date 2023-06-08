@@ -5,7 +5,7 @@ import sharp from 'sharp';
 import ora from 'ora';
 import ms from 'ms';
 
-import { Config, getConfig } from '@scrshot/helpers'
+import { Config, getConfig } from '@scrshot/config'
 import { validateLicense } from '../helpers/license';
 
 const sleep = (ms: number) => new Promise((resolve) => setTimeout(resolve, ms));

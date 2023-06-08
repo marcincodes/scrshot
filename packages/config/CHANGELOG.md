@@ -1,10 +1,12 @@
-# @scrshot/core
+# @scrshot/config
+
+## 0.0.0-dev-20230608122042
+
+### Patch Changes
+
+- test bump
 
 ## 0.0.0-dev-20230608121919
-
-## 0.0.0-dev-20230608121725
-
-## 0.0.0-dev-20230608121504
 
 ### Patch Changes
 
@@ -23,9 +25,3 @@
 - Test bump
 
   This is test bump expanded by changest file
-
-## 0.0.2
-
-### Patch Changes
-
-- Test bump

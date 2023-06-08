@@ -2,10 +2,19 @@
   "$schema": "https://unpkg.com/@changesets/config@2.3.0/schema.json",
   "changelog": "@changesets/cli/changelog",
   "commit": false,
-  "fixed": [],
-  "linked": [],
-  "access": "restricted",
+  "fixed": [
+    ["@scrshot/core", "@scrshot/react"]
+  ],
+  "linked": [
+    ["@scrshot/cli", "@scrshot/bundler", "@scrshot/config"]
+  ],
+  "access": "public",
   "baseBranch": "main",
   "updateInternalDependencies": "patch",
-  "ignore": []
+  "ignore": [
+    "nextjs",
+    "taxonomy",
+    "vite-react",
+    "website"
+  ]
 }

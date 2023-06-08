@@ -1,6 +1,6 @@
 {
   "name": "@scrshot/cli",
-  "version": "0.0.2",
+  "version": "0.0.0-dev-20230608122042",
   "type": "module",
   "author": "Marcin Skrzyński",
   "license": "AGPLv3",
@@ -24,7 +24,7 @@
     "unbuild": "^1.2.1"
   },
   "dependencies": {
-    "@scrshot/helpers": "0.0.1",
+    "@scrshot/config": "0.0.0-dev-20230608122042",
     "minimist": "^1.2.8",
     "ms": "^2.1.3",
     "node-fetch": "^3.3.1",

@@ -1,6 +1,6 @@
 {
   "name": "@scrshot/bundler",
-  "version": "0.0.2",
+  "version": "0.0.0-dev-20230608122154",
   "author": "Marcin Skrzyński",
   "license": "AGPLv3",
   "private": true,
@@ -22,7 +22,7 @@
     "check-types": "tsc --noEmit"
   },
   "dependencies": {
-    "@scrshot/helpers": "0.0.1",
+    "@scrshot/config": "0.0.0-dev-20230608122042",
     "recast": "0.23.2",
     "unplugin": "1.3.1"
   },

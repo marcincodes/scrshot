@@ -1,7 +1,10 @@
 {
   "name": "@scrshot/react",
-  "version": "0.0.2",
-  "author": "Marcin Skrzyński",
+  "version": "0.0.0-dev-20230608121919",
+  "author": {
+    "name": "Marcin Skrzyński",
+    "url": "https://marcin.page/"
+  },
   "license": "AGPLv3",
   "private": true,
   "exports": {
@@ -26,7 +29,7 @@
     "react": "18.2.0"
   },
   "dependencies": {
-    "@scrshot/core": "0.0.2"
+    "@scrshot/core": "0.0.0-dev-20230608121919"
   },
   "devDependencies": {
     "typescript": "4.9.4"

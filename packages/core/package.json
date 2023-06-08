@@ -1,7 +1,12 @@
 {
   "name": "@scrshot/core",
-  "version": "0.0.2",
-  "description": "Stencil Component Starter",
+  "version": "0.0.0-dev-20230608121919",
+  "description": "Create up-to-date application screenshots",
+  "keywords": [
+    "cli",
+    "screenshots",
+    "up-to-date screenshots"
+  ],
   "main": "dist/index.cjs.js",
   "module": "dist/index.js",
   "es2015": "dist/esm/index.mjs",
@@ -10,10 +15,6 @@
   "collection": "dist/collection/collection-manifest.json",
   "collection:main": "dist/collection/index.js",
   "unpkg": "dist/core/core.esm.js",
-  "repository": {
-    "type": "git",
-    "url": "https://github.com/ionic-team/stencil-component-starter.git"
-  },
   "files": [
     "dist/",
     "loader/"
@@ -26,7 +27,6 @@
     "generate": "stencil generate"
   },
   "dependencies": {
-    "@floating-ui/dom": "^1.2.9",
     "@stencil/core": "3.3.1",
     "@stencil/react-output-target": "0.5.1",
     "@stencil/store": "2.0.8"
@@ -36,6 +36,10 @@
     "jest": "^27.5.1",
     "jest-cli": "^27.5.1",
     "puppeteer": "^19.5.2"
+  },
+  "author": {
+    "name": "Marcin Skrzyński",
+    "url": "https://marcin.page/"
   },
   "license": "AGPLv3"
 }
