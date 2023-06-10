@@ -25,7 +25,10 @@ export const headerData = {
     },
   ],
   actions: [
-    { type: 'button', text: 'Preorder', href: 'https://scrshot.lemonsqueezy.com/checkout/buy/19711312-9868-4e9d-8401-e1012bdfc7b6?logo=0' }
+    { type: 'button', text: 'Preorder', 
+    href: '#',
+    // href: 'https://scrshot.lemonsqueezy.com/checkout/buy/19711312-9868-4e9d-8401-e1012bdfc7b6' 
+  }
   ],
 };
   
