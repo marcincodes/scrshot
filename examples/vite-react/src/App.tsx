@@ -1,5 +1,3 @@
-// @ts-nocheck
-
 import './App.css'
 
 import { defineCustomElements, ScrshotArea, ScrshotDebug } from '@scrshot/react';
