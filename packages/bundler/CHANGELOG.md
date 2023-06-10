@@ -1,39 +1,15 @@
 # @scrshot/bundler
 
-## 0.0.0-dev-20230608124649
+## 0.1.1
 
 ### Patch Changes
 
-- test bump
+- Minify files output for smaller bundle size
 - Updated dependencies
-  - @scrshot/config@0.0.0-dev-20230608124649
+  - @scrshot/config@0.1.1
 
-## 0.0.0-dev-20230608124107
+## 0.1.0
 
-### Patch Changes
+### Minor Changes
 
-- test bump
-- Updated dependencies
-  - @scrshot/config@0.0.0-dev-20230608124107
-
-## 0.0.2
-
-### Patch Changes
-
-- release package
-
-## 0.0.1
-
-### Patch Changes
-
-- release package
-- Updated dependencies
-  - @scrshot/config@0.0.1
-
-## 0.0.0
-
-### Patch Changes
-
-- release package
-- Updated dependencies
-  - @scrshot/config@0.0.0
+- initial release

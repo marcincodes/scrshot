@@ -1,6 +1,6 @@
 {
   "name": "@scrshot/config",
-  "version": "0.0.0-dev-20230608124649",
+  "version": "0.1.1",
   "description": "CLI config for Scrshot - Create up-to-date application screenshots",
   "keywords": [
     "cli",

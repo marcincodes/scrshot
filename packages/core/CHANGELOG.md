@@ -1,19 +1,13 @@
 # @scrshot/core
 
-## 0.0.0-dev-20230608124649
+## 0.1.1
 
 ### Patch Changes
 
-- test bump
+- Minify files output for smaller bundle size
 
-## 0.0.0-dev-20230608124107
+## 0.1.0
 
-### Patch Changes
+### Minor Changes
 
-- test bump
-
-## 0.0.0
-
-### Patch Changes
-
-- release package
+- initial release

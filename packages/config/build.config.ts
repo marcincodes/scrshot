@@ -7,5 +7,8 @@ export default {
   rollup: {
     inlineDependencies: false,
     emitCJS: true,
+    esbuild: {
+      minify: true,
+    },
   },
 }

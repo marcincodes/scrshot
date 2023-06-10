@@ -1,6 +1,6 @@
 {
   "name": "@scrshot/react",
-  "version": "0.0.0-dev-20230608124649",
+  "version": "0.1.1",
   "description": "React Components for Scrshot - Create up-to-date application screenshots",
   "keywords": [
     "cli",
@@ -35,7 +35,7 @@
     "react": "18.2.0"
   },
   "dependencies": {
-    "@scrshot/core": "0.0.0-dev-20230608124649"
+    "@scrshot/core": "0.1.1"
   },
   "devDependencies": {
     "typescript": "4.9.4"
