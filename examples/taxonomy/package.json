@@ -93,7 +93,7 @@
     "@commitlint/cli": "^17.6.1",
     "@commitlint/config-conventional": "^17.6.1",
     "@ianvs/prettier-plugin-sort-imports": "^3.7.2",
-    "@scrshot/cli": "0.0.0",
+    "@scrshot/cli": "0.1.1",
     "@tailwindcss/line-clamp": "^0.4.4",
     "@tailwindcss/typography": "^0.5.9",
     "@types/node": "^18.16.0",
@@ -121,6 +121,6 @@
     "tailwindcss": "^3.3.1",
     "typescript": "4.7.4",
     "unist-util-visit": "^4.1.2",
-    "@scrshot/bundler": "0.0.0"
+    "@scrshot/bundler": "0.1.1"
   }
 }
