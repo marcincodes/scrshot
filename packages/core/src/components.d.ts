@@ -8,8 +8,6 @@ import { HTMLStencilElement, JSXBase } from "@stencil/core/internal";
 export namespace Components {
     interface ScrshotArea {
     }
-    interface ScrshotDebug {
-    }
     interface ScrshotMark {
         "arrow"?: {
     color?: string;
@@ -33,12 +31,6 @@ declare global {
         prototype: HTMLScrshotAreaElement;
         new (): HTMLScrshotAreaElement;
     };
-    interface HTMLScrshotDebugElement extends Components.ScrshotDebug, HTMLStencilElement {
-    }
-    var HTMLScrshotDebugElement: {
-        prototype: HTMLScrshotDebugElement;
-        new (): HTMLScrshotDebugElement;
-    };
     interface HTMLScrshotMarkElement extends Components.ScrshotMark, HTMLStencilElement {
     }
     var HTMLScrshotMarkElement: {
@@ -53,15 +45,12 @@ declare global {
     };
     interface HTMLElementTagNameMap {
         "scrshot-area": HTMLScrshotAreaElement;
-        "scrshot-debug": HTMLScrshotDebugElement;
         "scrshot-mark": HTMLScrshotMarkElement;
         "scrshot-prevent-scrolling": HTMLScrshotPreventScrollingElement;
     }
 }
 declare namespace LocalJSX {
     interface ScrshotArea {
-    }
-    interface ScrshotDebug {
     }
     interface ScrshotMark {
         "arrow"?: {
@@ -80,7 +69,6 @@ declare namespace LocalJSX {
     }
     interface IntrinsicElements {
         "scrshot-area": ScrshotArea;
-        "scrshot-debug": ScrshotDebug;
         "scrshot-mark": ScrshotMark;
         "scrshot-prevent-scrolling": ScrshotPreventScrolling;
     }
@@ -90,7 +78,6 @@ declare module "@stencil/core" {
     export namespace JSX {
         interface IntrinsicElements {
             "scrshot-area": LocalJSX.ScrshotArea & JSXBase.HTMLAttributes<HTMLScrshotAreaElement>;
-            "scrshot-debug": LocalJSX.ScrshotDebug & JSXBase.HTMLAttributes<HTMLScrshotDebugElement>;
             "scrshot-mark": LocalJSX.ScrshotMark & JSXBase.HTMLAttributes<HTMLScrshotMarkElement>;
             "scrshot-prevent-scrolling": LocalJSX.ScrshotPreventScrolling & JSXBase.HTMLAttributes<HTMLScrshotPreventScrollingElement>;
         }

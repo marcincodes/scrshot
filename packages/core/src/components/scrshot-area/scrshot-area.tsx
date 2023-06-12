@@ -10,6 +10,10 @@ import store from '../../store';
 export class ScreenshotArea {
   @Element() host!: HTMLElement;
 
+  onToggleDebug() {
+    store.isDebug = !store.isDebug 
+  }
+
   render() {
     const { width, height } = this.host.getBoundingClientRect();
 
@@ -20,6 +24,9 @@ export class ScreenshotArea {
           <slot></slot>
         </div>
         <div class={{ measure: true, debug: store.isDebug }}>{Math.round(width)}x{Math.round(height)}</div>
+        <button class={{ devtool: true, hide: store.isScreenshot }} onClick={() => this.onToggleDebug()}>
+          Scrshot {store.isDebug ? <span class="on">ON</span> : <span class="off">OFF</span>} 
+        </button>
       </Fragment>
     );
   }

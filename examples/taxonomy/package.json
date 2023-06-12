@@ -57,7 +57,7 @@
     "@radix-ui/react-toggle": "^1.0.2",
     "@radix-ui/react-toggle-group": "^1.0.3",
     "@radix-ui/react-tooltip": "^1.0.5",
-    "@scrshot/react": "0.1.1",
+    "@scrshot/react": "0.1.2",
     "@t3-oss/env-nextjs": "^0.2.2",
     "@typescript-eslint/parser": "^5.59.0",
     "@vercel/analytics": "^1.0.0",
@@ -93,11 +93,11 @@
     "@commitlint/cli": "^17.6.1",
     "@commitlint/config-conventional": "^17.6.1",
     "@ianvs/prettier-plugin-sort-imports": "^3.7.2",
-    "@scrshot/cli": "0.1.1",
+    "@scrshot/cli": "0.1.2",
     "@tailwindcss/line-clamp": "^0.4.4",
     "@tailwindcss/typography": "^0.5.9",
     "@types/node": "^18.16.0",
-    "@types/react": "18.2.8",
+    "@types/react": "18.2.10",
     "@types/react-dom": "18.2.4",
     "autoprefixer": "^10.4.14",
     "eslint": "^8.39.0",
@@ -119,8 +119,8 @@
     "remark": "^14.0.2",
     "remark-gfm": "^3.0.1",
     "tailwindcss": "^3.3.1",
-    "typescript": "4.7.4",
+    "typescript": "4.9.4",
     "unist-util-visit": "^4.1.2",
-    "@scrshot/bundler": "0.1.1"
+    "@scrshot/bundler": "0.1.2"
   }
 }

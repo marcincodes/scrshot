@@ -1,5 +1,13 @@
 # @scrshot/cli
 
+## 0.1.2
+
+### Patch Changes
+
+- Better handling issues and presenting them to user
+- Updated dependencies
+  - @scrshot/config@0.1.2
+
 ## 0.1.1
 
 ### Patch Changes

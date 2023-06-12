@@ -1,6 +1,7 @@
 import { cosmiconfigSync, cosmiconfig } from 'cosmiconfig';
 import { z } from 'zod';
 import { zodToJsonSchema } from "zod-to-json-schema";
+import { fromZodError } from 'zod-validation-error';
 
 export const Config = z.object({
   url: z.string().url(),
@@ -41,7 +42,19 @@ export async function getConfig() {
     throw new Error('Config not found');
   }
 
-  return { config: Config.parse(searched.config), filepath: searched.filepath };
+  try {
+    const config = Config.parse(searched.config);
+
+    return { config, error: null, filepath: searched.filepath };
+  } catch (cause) {
+    return { 
+      config: {}, 
+      error: fromZodError(cause, { 
+        prefix: 'Config error'
+      }), 
+      filepath: searched.filepath
+    };
+  }
 }
 
 export function getConfigSync() {
@@ -53,7 +66,19 @@ export function getConfigSync() {
     throw new Error('Config not found');
   }
 
-  return { config: Config.parse(searched.config), filepath: searched.filepath };
+  try {
+    const config = Config.parse(searched.config);
+
+    return { config, error: null, filepath: searched.filepath };
+  } catch (cause) {
+    return { 
+      config: {}, 
+      error: fromZodError(cause, { 
+        prefix: 'Config error'
+      }), 
+      filepath: searched.filepath
+    };
+  }
 }
 
 export function getConfigJSONScheme() {

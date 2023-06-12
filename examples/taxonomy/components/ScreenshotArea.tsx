@@ -1,6 +1,6 @@
 "use client"
 
-import { ScrshotArea, ScrshotDebug, defineCustomElements } from '@scrshot/react';
+import { ScrshotArea, defineCustomElements } from '@scrshot/react';
 
 defineCustomElements();
 
@@ -10,7 +10,6 @@ export function ScreenshotArea({ children }) {
       <ScrshotArea>
         {children} 
       </ScrshotArea>
-      <ScrshotDebug />
     </>
   )
 }

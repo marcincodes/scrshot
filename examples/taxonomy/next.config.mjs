@@ -1,5 +1,5 @@
 import { withContentlayer } from "next-contentlayer"
-import { unplugin } from '@scrshot/bundler'
+import Scrshot from '@scrshot/bundler/webpack'
 
 import "./env.mjs"
 
@@ -14,7 +14,7 @@ const nextConfig = {
     serverComponentsExternalPackages: ["@prisma/client"],
   },
   webpack: (config) => {
-    config.plugins.push(unplugin.webpack())
+    config.plugins.push(Scrshot())
 
     return config;
   }

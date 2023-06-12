@@ -8,13 +8,17 @@
     "experimentalDecorators": true,
     "sourceMap": true,
     "outDir": "./dist",
-    "lib": ["dom", "es2015"],
-    "module": "es2015",
+    "lib": ["esnext", "DOM"],
+    "module": "esnext",
     "moduleResolution": "node",
-    "target": "es2015",
+    "target": "es2017",
     "skipLibCheck": true,
     "allowSyntheticDefaultImports": true,
+    "resolveJsonModule": true,
+    "strictNullChecks": false,
+    "esModuleInterop": true,
+    "strict": false
   },
-  "include": ["index.ts"],
+  "include": ["src/*", "tsup.config.ts"],
   "exclude": ["node_modules"]
 }

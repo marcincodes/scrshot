@@ -1,6 +1,6 @@
 import Image from 'next/image'
 import { Inter } from 'next/font/google'
-import { defineCustomElements, ScrshotArea, ScrshotDebug } from '@scrshot/react'
+import { defineCustomElements, ScrshotArea } from '@scrshot/react'
 import { Content } from '@/components/Content';
 import { Screenshot } from '@/components/Screenshot';
 
@@ -44,7 +44,6 @@ export default function Home() {
           <ScrshotArea>
             <Content />
           </ScrshotArea>
-          <ScrshotDebug />
         </div>
 
         <Screenshot />

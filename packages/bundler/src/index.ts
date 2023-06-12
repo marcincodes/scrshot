@@ -3,22 +3,10 @@ import path from 'path';
 import { getConfigSync } from '@scrshot/config';
 import * as recast from 'recast';
 import * as esprima from 'recast/parsers/esprima.js';
-
-interface PluginOptions {
-  /**
-   * Watch images 
-   */
-  watch?: boolean;
-
-  /**
-   * Strip components from production bundle
-   */
-  strip?: boolean;
-};
+import { Options } from './types';
 
 const componentNames = [
   'ScrshotArea',
-  'ScrshotDebug',
   'ScrshotMark',
   'ScrshotPreventScrolling'
 ];
@@ -77,7 +65,7 @@ function getFramework(code: string) {
   return null;
 }
 
-export const unplugin = createUnplugin((options: PluginOptions = { watch: true, strip: true }) => {
+export default createUnplugin<Options | undefined>((options: Options = { watch: true, strip: true }) => {
   return {
     name: 'unplugin-scrshot',
     buildStart() {
@@ -86,10 +74,14 @@ export const unplugin = createUnplugin((options: PluginOptions = { watch: true, 
       if (typeof watch !== 'undefined' && !watch) {
         // watching images not working in vite https://github.com/vitejs/vite/pull/13371
         // watching images not working in webpack
-        const { config } = getConfigSync();
+        const { config, error } = getConfigSync();
 
-        for (const screenshot of Object.keys(config.screenshots)) {
-          this.addWatchFile(path.resolve(process.cwd(), config.dest, `${screenshot}.png`))
+        if (error) {
+          console.error(error);
+        } else if ('screenshots' in config) {
+          for (const screenshot of Object.keys(config.screenshots)) {
+            this.addWatchFile(path.resolve(process.cwd(), config.dest, `${screenshot}.png`))
+          }
         }
       }
     },
@@ -133,11 +125,4 @@ export const unplugin = createUnplugin((options: PluginOptions = { watch: true, 
       }
     },
   }
-})
-
-// FAILING when uncommented
-// export const vitePlugin = unplugin.vite
-// export const rollupPlugin = unplugin.rollup
-// export const webpackPlugin = unplugin.webpack
-// export const rspackPlugin = unplugin.rspack
-// export const esbuildPlugin = unplugin.esbuild
+});

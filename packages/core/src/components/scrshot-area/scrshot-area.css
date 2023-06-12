@@ -43,6 +43,31 @@
   display: inline-flex;
 }
 
+.devtool {
+  display: block;
+  position: fixed;
+  bottom: 4px;
+  left: 4px;
+  z-index: 2147483647;
+  padding: 4px 8px;
+  border-radius: 12px;
+  border: 1px solid #ccc;
+  background: #fff;
+  color: #000;
+}
+
+.off {
+  color: red;
+}
+
+.on {
+  color: green;
+}
+
+.hide {
+  display: none;
+}
+
 @media (prefers-color-scheme: dark) {
   .debug {
     background: #000;
@@ -50,5 +75,10 @@
 
   .backdrop {
     background: rgba(255, 255, 255, 0.6);
+  }
+
+  .devtool {
+    background: #000;
+    color: #fff;
   }
 }

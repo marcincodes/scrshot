@@ -1,6 +1,6 @@
 import './App.css'
 
-import { defineCustomElements, ScrshotArea, ScrshotDebug } from '@scrshot/react';
+import { defineCustomElements, ScrshotArea } from '@scrshot/react';
 import Content from './Content';
 import Screenshot from './Screenshot';
 
@@ -14,7 +14,6 @@ function App() {
         <ScrshotArea>
           <Content />
         </ScrshotArea>
-        <ScrshotDebug />
       </div>
 
       <Screenshot />

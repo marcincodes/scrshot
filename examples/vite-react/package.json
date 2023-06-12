@@ -13,10 +13,10 @@
   "dependencies": {
     "react": "^18.2.0",
     "react-dom": "^18.2.0",
-    "@scrshot/react": "0.1.1"
+    "@scrshot/react": "0.1.2"
   },
   "devDependencies": {
-    "@types/react": "18.2.8",
+    "@types/react": "18.2.10",
     "@types/react-dom": "18.2.4",
     "@typescript-eslint/eslint-plugin": "^5.59.0",
     "@typescript-eslint/parser": "^5.59.0",
@@ -26,7 +26,7 @@
     "eslint-plugin-react-refresh": "^0.3.4",
     "typescript": "^5.0.2",
     "vite": "^4.3.9",
-    "@scrshot/cli": "0.1.1",
-    "@scrshot/bundler": "0.1.1"
+    "@scrshot/cli": "0.1.2",
+    "@scrshot/bundler": "0.1.2"
   }
 }

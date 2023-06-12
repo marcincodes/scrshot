@@ -1,5 +1,6 @@
 import path from 'node:path';
 import fs from 'node:fs';
+
 import { Browser, BrowserContextOptions, Page, chromium } from 'playwright';
 import sharp from 'sharp';
 import ora from 'ora';
@@ -7,6 +8,7 @@ import ms from 'ms';
 
 import { Config, getConfig } from '@scrshot/config'
 import { validateLicense } from '../helpers/license';
+import { validateURL } from '../helpers/url';
 
 const sleep = (ms: number) => new Promise((resolve) => setTimeout(resolve, ms));
 
@@ -111,10 +113,22 @@ export async function run() {
     fs.mkdirSync(BASEDIR);
   }
 
-  const { config, filepath } = await getConfig();
+  const { config, filepath, error: configError } = await getConfig();
+
+  if (configError) {
+    configSpinner.fail(configError.message);
+    return;
+  }
 
   if (!fs.existsSync(path.resolve(config.dest))) {
     configSpinner.fail(`${config.dest} is not existing`);
+    return;
+  }
+
+  const screenshots = Object.keys(config.screenshots);
+
+  if (screenshots.length === 0) {
+    configSpinner.fail('Screenshots are not defined');
     return;
   }
 
@@ -130,15 +144,25 @@ export async function run() {
   }
 
   licenseSpinner.succeed('License valid');
+  
+  const urlSpinner = ora('Validating URL').start();
 
+  const { error: urlError } = await validateURL(config.url);
+
+  if (urlError) {
+    urlSpinner.fail('URL not responding');
+    return;
+  }
+
+  urlSpinner.succeed(`${config.url} is available`);
 
   const browser = await createBrowser();
   const context = config.auth
     ? await createAuthContext(browser, config) 
     : await createContext(browser, config);
   const page = await context.newPage();
-
-  for await (const name of Object.keys(config.screenshots)) {
+ 
+  for await (const name of screenshots) {
     const screenshotSpinner = ora(`Taking "${name}" screenshot`).start();
     screenshotSpinner.indent = 0;
 
@@ -151,7 +175,6 @@ export async function run() {
     }
 
     if (typeof screenshot.auth !== 'undefined' && !screenshot.auth) {
-      // const unauthorizedBrowser = await createBrowser({ headless: false });
       const unauthorizedContext = await createContext(browser, config);
       const unauthorizedPage = await unauthorizedContext.newPage();
 
@@ -197,7 +220,7 @@ export async function run() {
 }
 
 export async function help() {
-  console.log('dev help');
+  console.log('Run screenshots generation in development mode');
 }
 
 export default {
