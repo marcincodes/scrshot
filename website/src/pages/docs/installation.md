@@ -61,10 +61,12 @@ We have 4 components and they are used for different purpose:
 
 It marks area that should be included in screenshot. Everything outside of this area won't be visible and your screenshot will be trimmed. You can have only one of this component on page.
 
-### `ScrshotDebug`
+~### `ScrshotDebug`~
 
-Adds to a page floating button that turn-on / turn-off "debug mode" where you can see how screenshot will look like,
-all markers and if something scrolls into screenshot view.
+~Adds to a page floating button that turn-on / turn-off "debug mode" where you can see how screenshot will look like,
+all markers and if something scrolls into screenshot view.~
+
+**Functionality moved to `ScrshotArea` component**
 
 ### `ScrshotPreventScrolling`
 
@@ -172,6 +174,22 @@ pnpm install @scrshot/bundler --save-dev
 Then in our webpack config file we can use it like any other plugin:
 
 ```tsx
+// ✅ Works from 0.1.2
+const path = require('path');
+
+module.exports = {
+  entry: './src/index.js',
+  output: {
+    filename: 'main.js',
+    path: path.resolve(__dirname, 'dist'),
+  },
+  plugins: [
+    /* other plugins */
+    require('@scrshot/bundler/webpack')()
+  ]
+};
+
+// ❌ Works in 0.1.1
 const path = require('path');
 const unplugin = require('@scrshot/bundler').unplugin;
 
@@ -191,6 +209,17 @@ module.exports = {
 Also, you can use it in vite:
 
 ```tsx
+// ✅ Works from 0.1.2
+import { defineConfig } from 'vite'
+import react from '@vitejs/plugin-react-swc'
+import Scrshot from '@scrshot/bundler/vite';
+
+// https://vitejs.dev/config/
+export default defineConfig({
+  plugins: [react(), Scrshot()],
+});
+
+// ❌ Works in 0.1.1
 import { defineConfig } from 'vite'
 import react from '@vitejs/plugin-react-swc'
 import { unplugin } from '@scrshot/bundler';
