@@ -12,10 +12,10 @@ displayed on them.
 
 ### Scrshot consists of three modules:
 
-- [CLI](/docs/cli/introduction) is responsible for creating screenshots and and integrating them into your project
-- [Components](/docs/components/introduction) are for maintaining screenshot area, prevent scrolling into view of
+- [CLI](/docs/cli) is responsible for creating screenshots and and integrating them into your project
+- [Components](/docs/components) are for maintaining screenshot area, prevent scrolling into view of
 the screenshot or marking an areas that are important
-- [Bundler](/docs/bundler/introduction) plugins helps strip out Scrshot components from production bundle and gives 
+- [build](/docs/build) plugins helps strip out Scrshot components from production bundle and gives 
 you ability to commit them safely into your codebase
 
 

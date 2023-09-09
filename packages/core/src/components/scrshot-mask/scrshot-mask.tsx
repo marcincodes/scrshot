@@ -3,11 +3,11 @@ import { Component, h } from '@stencil/core';
 import store from '../../store';
 
 @Component({
-  tag: 'scrshot-prevent-scrolling',
-  styleUrl: 'scrshot-prevent-scrolling.css',
+  tag: 'scrshot-mask',
+  styleUrl: 'scrshot-mask.css',
   shadow: true,
 })
-export class ScreenshotPreventScrolling {
+export class ScreenshotMask {
 
   render() {
     return (

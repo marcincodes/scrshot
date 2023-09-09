@@ -1,0 +1,24 @@
+{
+  "expo": {
+    "scheme": "acme",
+    "web": {
+      "bundler": "metro"
+    },
+    "name": "expo-with-router",
+    "slug": "expo-with-router",
+    "plugins": [
+      "@config-plugins/detox"
+    ],
+    "android": {
+      "package": "dev.scrshot.expo"
+    },
+    "ios": {
+      "bundleIdentifier": "dev.scrshot.expo"
+    },
+    "extra": {
+      "eas": {
+        "projectId": "64947cb4-8cf6-45c2-aa93-974dcccf807c"
+      }
+    }
+  }
+}

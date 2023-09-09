@@ -15,7 +15,8 @@
     "cli": "yarn workspace @scrshot/cli",
     "core": "yarn workspace @scrshot/core",
     "react": "yarn workspace @scrshot/react",
-    "bundler": "yarn workspace @scrshot/bundler",
+    "react-native": "yarn workspace @scrshot/react-native",
+    "build": "yarn workspace @scrshot/build",
     "conf": "yarn workspace @scrshot/config"
   },
   "keywords": [],

@@ -4,27 +4,35 @@
 export const SIDEBAR = [
 	{ text: "Getting Started", header: true },
 	{ text: "Introduction", link: "/docs" },
-  { text: "Installation", link: "/docs/installation" },
+  // { text: "Installation", link: "/docs/installation" },
+	// { text: "Tutorial", link: "/docs/tutorial" },
 
   { text: "CLI", header: true },
-	{ text: "Introduction", link: "/docs/cli/introduction" },
+	{ text: "Introduction", link: "/docs/cli" },
+	{ text: "Config", link: "/docs/cli/config" },
   { text: "dev", link: "/docs/cli/dev" },
-	{ text: "generate", link: "/docs/cli/generate" },
-	{ text: "license", link: "/docs/cli/license" },
+	// { text: "generate", link: "/docs/cli/generate" },
+	// { text: "license", link: "/docs/cli/license" },
 
   { text: "Components", header: true },
-	{ text: "Introduction", link: "/docs/components/introduction" },
-  { text: "Area", link: "/docs/components/scrshot-area" },
-  { text: "Debug", link: "/docs/components/scrshot-debug" },
-  { text: "Prevent Scrolling", link: "/docs/components/scrshot-prevent-scrolling" },
-  { text: "Mark", link: "/docs/components/scrshot-mark" },
+	{ text: "Introduction", link: "/docs/components" },
+  { text: "Area", link: "/docs/components/area" },
+  { text: "Mask", link: "/docs/components/mask" },
+  { text: "Mark", link: "/docs/components/mark" },
 
-  { text: "Bundler", header: true },
-  { text: "Introduction", link: "/docs/bundler/introduction" },
-	{ text: "Vite", link: "/docs/bundler/vite" },
+  { text: "Build", header: true },
+  { text: "Introduction", link: "/docs/build" },
+	// { text: "Webpack", link: "/docs/build/webpack" },
+	// { text: "Vite", link: "/docs/build/vite" },
+	// { text: "RSPack", link: "/docs/build/rspack" },
+	// { text: "Rollup", link: "/docs/build/rollup" },
+	// { text: "esbuild", link: "/docs/build/esbuild" },
+	// { text: "Nuxt", link: "/docs/build/nuxt" },
+	// { text: "Next.js", link: "/docs/build/next" },
 
 	{ text: "Guides", header: true },
-  { text: "Next.js", link: "/docs/guides/nextjs" },
+	{ text: "Introduction", link: "/docs/guides" },
+  // { text: "Next.js", link: "/docs/guides/next" },
 ];
 
 const { currentPage } = Astro.props;

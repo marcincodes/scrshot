@@ -1,6 +1,6 @@
 {
   "name": "@scrshot/react",
-  "version": "0.1.2",
+  "version": "0.2.0",
   "description": "React Components for Scrshot - Create up-to-date application screenshots",
   "keywords": [
     "cli",
@@ -15,12 +15,12 @@
   "license": "AGPLv3",
   "exports": {
     ".": {
-      "import": "./dist/index.mjs",
-      "require": "./dist/index.cjs",
+      "import": "./dist/index.mjs.js",
+      "require": "./dist/index.cjs.js",
       "types": "./dist/index.d.ts"
     }
   },
-  "main": "./dist/index.cjs",
+  "main": "./dist/index.cjs.js",
   "types": "./dist/index.d.ts",
   "files": [
     "dist"
@@ -36,7 +36,7 @@
     "react": "18.2.0"
   },
   "dependencies": {
-    "@scrshot/core": "0.1.2"
+    "@scrshot/core": "0.2.0"
   },
   "devDependencies": {
     "typescript": "4.9.4"

@@ -1,7 +1,9 @@
 {
   "url": "http://localhost:3000",
   "dest": "public/screenshots",
-  "license": "62BBB29B-FE81-45AC-8789-101105BB0264",
+  "output": {
+    
+  },
   "screenshots": {
     "homepage": {
       "path": "/"

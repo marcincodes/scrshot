@@ -1,5 +1,23 @@
 # @scrshot/react
 
+## 0.2.0
+
+### Minor Changes
+
+- Release version 0.2.0
+
+  This version contains breaking changes:
+
+  - Renamed ScrshotPreventScrolling to ScrshotMask
+  - Renamed package @scrshot/bundler to @scrshot/build
+
+  Refactored CLI to not use license field. Remove redundant commands, and leftovers after refactor. Added output with simple properties to support making better screenshots.
+
+### Patch Changes
+
+- Updated dependencies
+  - @scrshot/core@0.2.0
+
 ## 0.1.2
 
 ### Patch Changes

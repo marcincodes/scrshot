@@ -8,7 +8,7 @@ import { Options } from './types';
 const componentNames = [
   'ScrshotArea',
   'ScrshotMark',
-  'ScrshotPreventScrolling'
+  'ScrshotMask'
 ];
 
 const transformers = {

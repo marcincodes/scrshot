@@ -1,6 +1,6 @@
 # Scrshot
 
-Package containing bundlers plugin for [Scrshot](https://scrshot.dev/).
+Package containing build plugin for [Scrshot](https://scrshot.dev/).
 
 ## Installation
 
@@ -9,31 +9,31 @@ You can install them from npm package registry:
 Using npm:
 
 ```bash
-npm install @scrshot/bundler
+npm install @scrshot/build
 ```
 
 Using yarn:
 
 ```bash
-yarn add @scrshot/bundler
+yarn add @scrshot/build
 ```
 
 Using pnpm:
 
 ```bash
-pnpm add @scrshot/bundler
+pnpm add @scrshot/build
 ```
 
 ## Usage
 
-You can use bundler plugin in most bundlers on the market and many frameworks.
+You can use build plugin in most bundlers on the market and many frameworks.
 
 Usage with frameworks:
 
 ### Next
 ```js
 // next.config.js
-const withScrshot = require('@scrshot/bundler/next')({ /* options */ });
+const withScrshot = require('@scrshot/build/next')({ /* options */ });
 
 module.exports = withScrshot({ /* next config */ })
 ```
@@ -43,7 +43,7 @@ module.exports = withScrshot({ /* next config */ })
 // nuxt.config.js
 export default {
   buildModules: [
-    ['@scrshot/bundler/nuxt', { /* options */ }],
+    ['@scrshot/build/nuxt', { /* options */ }],
   ],
 }
 ```
@@ -54,7 +54,7 @@ Usage with bundlers:
 
 ```ts
 // vite.config.ts
-import Scrshot from '@scrshot/bundler/vite'
+import Scrshot from '@scrshot/build/vite'
 
 export default defineConfig({
   plugins: [
@@ -70,7 +70,7 @@ export default defineConfig({
 module.exports = {
   /* ... */
   plugins: [
-    require('@scrshot/bundler/webpack')({ /* options */ })
+    require('@scrshot/build/webpack')({ /* options */ })
   ]
 }
 ```
@@ -79,7 +79,7 @@ module.exports = {
 
 ```js
 // rollup.config.js
-import Scrshot from '@scrshot/bundler/rollup'
+import Scrshot from '@scrshot/build/rollup'
 
 export default {
   plugins: [
@@ -93,7 +93,7 @@ export default {
 ```js
 // esbuild.config.js
 import { build } from 'esbuild'
-import Scrshot from '@scrshot/bundler/esbuild'
+import Scrshot from '@scrshot/build/esbuild'
 
 build({
   plugins: [Scrshot({ /* options */ })],
@@ -106,7 +106,7 @@ build({
 // rspack.config.js
 
 module.exports = {
-  plugins: [require('@scrshot/bundler/rspack')({ /* options */ })],
+  plugins: [require('@scrshot/build/rspack')({ /* options */ })],
 };
 ```
 

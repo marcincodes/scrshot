@@ -16,7 +16,7 @@ function Content() {
           <img src={reactLogo} className="logo react" alt="React logo" />
         </a>
       </div>
-      <h1>1234</h1>
+      <h1>React + Scrshot</h1>
       <div className="card">
         <ScrshotMark display="inline-flex" outline={null} arrow={{ placement: 'top-end' }}>
           <button onClick={() => setCount((count) => count + 1)}>

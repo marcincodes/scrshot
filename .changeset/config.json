@@ -6,15 +6,17 @@
     ["@scrshot/core", "@scrshot/react"]
   ],
   "linked": [
-    ["@scrshot/cli", "@scrshot/bundler", "@scrshot/config"]
+    ["@scrshot/cli", "@scrshot/build", "@scrshot/config"]
   ],
   "access": "public",
   "baseBranch": "main",
   "updateInternalDependencies": "patch",
   "ignore": [
+    "website",
+
     "nextjs",
     "taxonomy",
     "vite-react",
-    "website"
+    "expo-with-router"
   ]
 }

@@ -1,4 +1,4 @@
-const withScrshot = require('@scrshot/bundler/next')();
+const withScrshot = require('@scrshot/build/next')();
 
 /** @type {import('next').NextConfig} */
 const nextConfig = {

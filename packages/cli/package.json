@@ -1,6 +1,6 @@
 {
   "name": "@scrshot/cli",
-  "version": "0.1.2",
+  "version": "0.2.0",
   "description": "CLI for Scrshot - Create up-to-date application screenshots",
   "type": "module",
   "keywords": [
@@ -34,8 +34,10 @@
     "unbuild": "^1.2.1"
   },
   "dependencies": {
-    "@scrshot/config": "0.1.2",
+    "@scrshot/config": "0.2.0",
     "chokidar": "^3.5.3",
+    "dayjs": "^1.11.8",
+    "detox": "^20.9.1",
     "minimist": "^1.2.8",
     "ms": "^2.1.3",
     "node-fetch": "^3.3.1",

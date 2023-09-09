@@ -1,4 +1,5 @@
 {
+  "root": true,
   "compilerOptions": {
     "declaration": true,
     "noImplicitAny": false,
@@ -9,7 +10,7 @@
     "sourceMap": true,
     "outDir": "./dist",
     "lib": ["dom", "es2015"],
-    "module": "es2015",
+    "module": "nodenext",
     "moduleResolution": "nodenext",
     "target": "es2015",
     "skipLibCheck": true,

@@ -4,7 +4,7 @@ function Screenshot() {
   return (
     <div>
       <h1>I'm up-to-date screenshot</h1>
-      <img src={screenshot} />
+      <img style={{ maxWidth: '100%'}} src={screenshot} />
     </div>
   )
 }

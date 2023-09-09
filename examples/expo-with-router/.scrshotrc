@@ -1,0 +1,17 @@
+{
+  "url": "expo-with-router",
+  "dest": "public",
+  "android": {
+    "dest": "public/android",
+    "paths": {
+      "app": "dist/expowithrouter.apk",
+      "test": "dist/expowithrouter-androidTest.apk"
+    },
+    "device": "Pixel_3a_API_34_extension_level_7_arm64-v8a"
+  },
+  "screenshots": {
+    "homepage": {
+      "path": "/"
+    }
+  }
+}
