@@ -1,5 +1,7 @@
 # scrshot
 
+> [!IMPORTANT]  
+> Work in progress. It's early stage of development
 
 # Publishing packages
 
