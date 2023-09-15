@@ -1,9 +1,9 @@
-import defaultImage from './assets/images/default.png';
+import defaultImage from './assets/images/scrshot.png';
 
 const CONFIG = {
   name: 'scrshot',
 
-  origin: 'https://astrowind.vercel.app',
+  origin: 'https://scrshot.dev',
   basePathname: '/',
   trailingSlash: false,
 
