@@ -9,23 +9,9 @@
   "output": {
     "space": [50, 40, 50, 40],
     "background": {
-      "radius": 20,
-      "border": {
-        "style": "solid",
-        "width": 5,
-        "color": "red"
-      },
       "gradient": {
         "0": "skyblue",
         "100": "teal"
-      }
-    },
-    "screenshot": {
-      "radius": 15,
-      "border": {
-        "style": "solid",
-        "width": 5,
-        "color": "red"
       }
     }
   }

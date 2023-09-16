@@ -1,6 +1,6 @@
 {
   "name": "@scrshot/build",
-  "version": "0.2.0",
+  "version": "0.2.1",
   "description": "Build plugins for Scrshot - Create up-to-date application screenshots",
   "keywords": [
     "cli",
@@ -12,7 +12,11 @@
     "url": "https://marcin.page/"
   },
   "homepage": "https://scrshot.dev",
-  "license": "AGPLv3",
+  "license": "AGPL-3.0",
+  "repository": {
+    "type": "git",
+    "url": "https://github.com/Perfect7M/scrshot.git"
+  },
   "exports": {
     ".": {
       "types": "./dist/index.d.ts",
@@ -80,16 +84,18 @@
     "build:fix": "esno scripts/postbuild.ts",
     "dev": "tsup --watch src",
     "check-types": "tsc --noEmit",
+    "lint": "publint",
     "prepublishOnly": "yarn build"
   },
   "dependencies": {
-    "@scrshot/config": "0.2.0",
+    "@scrshot/config": "0.2.1",
     "recast": "0.23.2",
     "unplugin": "1.3.1"
   },
   "devDependencies": {
     "typescript": "4.9.4",
-    "tsup": "6.7.0",
-    "esno": "0.16.3"
+    "tsup": "7.2.0",
+    "esno": "0.17.0",
+    "publint": "0.2.2"
   }
 }

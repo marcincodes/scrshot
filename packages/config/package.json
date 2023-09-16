@@ -1,6 +1,6 @@
 {
   "name": "@scrshot/config",
-  "version": "0.2.0",
+  "version": "0.2.1",
   "description": "CLI config for Scrshot - Create up-to-date application screenshots",
   "keywords": [
     "cli",
@@ -12,32 +12,38 @@
     "url": "https://marcin.page/"
   },
   "homepage": "https://scrshot.dev",
-  "license": "AGPLv3",
+  "license": "AGPL-3.0",
+  "repository": {
+    "type": "git",
+    "url": "https://github.com/Perfect7M/scrshot.git"
+  },
   "exports": {
     ".": {
-      "import": "./dist/index.mjs",
-      "require": "./dist/index.cjs",
-      "types": "./dist/index.d.ts"
+      "types": "./dist/index.d.mts",
+      "import": "./dist/index.esm.js",
+      "require": "./dist/index.cjs.js"
     }
   },
-  "main": "./dist/index.cjs",
+  "main": "./dist/index.cjs.js",
   "types": "./dist/index.d.ts",
   "files": [
     "dist"
   ],
   "scripts": {
-    "build": "unbuild",
-    "dev": "unbuild --stub",
+    "build": "tsup",
+    "lint": "publint",
     "check-types": "tsc --noEmit",
     "prepublishOnly": "yarn build"
   },
   "dependencies": {
-    "cosmiconfig": "8.2.0",
-    "zod": "3.21.4",
-    "zod-to-json-schema": "3.21.1",
-    "zod-validation-error": "^1.3.0"
+    "cosmiconfig": "8.3.6",
+    "zod": "3.22.2",
+    "zod-to-json-schema": "3.21.4",
+    "zod-validation-error": "1.5.0"
   },
   "devDependencies": {
-    "typescript": "4.9.4"
+    "typescript": "4.9.4",
+    "tsup": "7.2.0",
+    "publint": "0.2.2"
   }
 }

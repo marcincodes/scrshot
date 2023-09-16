@@ -7,6 +7,5 @@ export default <Options>{
   clean: true,
   format: ['cjs', 'esm'],
   dts: true,
-  // minify: true,
   onSuccess: 'npm run build:fix',
 }

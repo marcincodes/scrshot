@@ -1,5 +1,5 @@
 import { withContentlayer } from "next-contentlayer"
-import Scrshot from '@scrshot/bundler/webpack'
+import Scrshot from '@scrshot/build/webpack'
 
 import "./env.mjs"
 

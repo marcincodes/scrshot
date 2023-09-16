@@ -21,7 +21,11 @@
   },
   "keywords": [],
   "author": "Marcin Skrzyński",
-  "license": "AGPLv3",
+  "license": "AGPL-3.0",
+  "repository": {
+    "type": "git",
+    "url": "https://github.com/Perfect7M/scrshot.git"
+  },
   "dependencies": {
     "@changesets/cli": "^2.26.1"
   }

@@ -9,7 +9,7 @@
   },
   "dependencies": {
     "@config-plugins/detox": "^5.0.1",
-    "@scrshot/cli": "0.2.0",
+    "@scrshot/cli": "0.2.1",
     "expo": "~48.0.18",
     "expo-constants": "~14.2.1",
     "expo-linking": "~4.0.1",

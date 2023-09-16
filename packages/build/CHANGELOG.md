@@ -1,5 +1,13 @@
 # @scrshot/build
 
+## 0.2.1
+
+### Patch Changes
+
+- Cleanup packages
+- Updated dependencies
+  - @scrshot/config@0.2.1
+
 ## 0.2.0
 
 ### Minor Changes
