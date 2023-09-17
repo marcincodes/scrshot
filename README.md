@@ -1,11 +1,8 @@
 # Scrshot - create up-to-date application screenshots
 
-> [!IMPORTANT]  
-> Work in progress. It's early stage of development
-
 ## Demo
 
-![Demo]()
+https://github.com/Perfect7M/scrshot/assets/5896181/695ee9ef-422f-40c3-8542-15c58e35139e
 
 ## How does it works?
 
